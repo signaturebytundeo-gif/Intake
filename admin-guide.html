@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InTake Impact Corp - Admin Access Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #1a1a2e;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 3rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            color: #0a1628;
+            border-bottom: 3px solid #088395;
+            padding-bottom: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .confidential {
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .last-updated {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            color: #088395;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        h2 .num {
+            background: #088395;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-right: 0.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        th {
+            background: #f0fafb;
+            font-weight: 600;
+            color: #0a1628;
+            width: 200px;
+        }
+        td {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+        td.normal { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        a { color: #088395; }
+        a:hover { text-decoration: underline; }
+        .note {
+            background: #f0fafb;
+            border-left: 4px solid #088395;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem 1.2rem;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .section-description {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        ul {
+            margin: 0.5rem 0 1rem 1.5rem;
+        }
+        li {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+        .footer-note {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e5e5e5;
+            color: #888;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        @media print {
+            body { padding: 0; background: #fff; }
+            .container { box-shadow: none; padding: 1rem; }
+        }
+        @media (max-width: 640px) {
+            body { padding: 1rem; }
+            .container { padding: 1.5rem; }
+            th { width: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>InTake Impact Corp - Admin Access Guide</h1>
+        <div class="confidential">CONFIDENTIAL - Do not share publicly. Store securely.</div>
+        <p class="last-updated">Last updated: February 19, 2026</p>
+
+        <!-- ============================================ -->
+        <h2><span class="num">1</span> Website Overview</h2>
+        <p class="section-description">The InTake Impact Corp website is a single-page HTML site hosted on Cloudflare Pages, with DNS managed by Cloudflare and the domain registered at GoDaddy.</p>
+        <table>
+            <tr><th>Live URL</th><td><a href="https://intakeimpact.org" target="_blank">https://intakeimpact.org</a></td></tr>
+            <tr><th>Also works at</th><td><a href="https://www.intakeimpact.org" target="_blank">https://www.intakeimpact.org</a></td></tr>
+            <tr><th>Backup URL (Netlify)</th><td><a href="https://intakeimpact.netlify.app" target="_blank">https://intakeimpact.netlify.app</a></td></tr>
+            <tr><th>Technology</th><td class="normal">Static HTML, CSS, JavaScript (single file: index.html)</td></tr>
+        </table>
+
+        <!-- ============================================ -->
+        <h2><span class="num">2</span> Domain Registrar - GoDaddy</h2>
+        <p class="section-description">The domain intakeimpact.org is registered here. Nameservers are pointed to Cloudflare.</p>
+        <table>
+            <tr><th>Dashboard</th><td><a href="https://dcc.godaddy.com" target="_blank">https://dcc.godaddy.com</a></td></tr>
+            <tr><th>Domain</th><td>intakeimpact.org</td></tr>
+            <tr><th>Account Email</th><td>tintakeimpactcorp@gmail.com</td></tr>
+            <tr><th>Nameservers</th><td class="normal">Pointed to Cloudflare (eugene.ns.cloudflare.com, cloe.ns.cloudflare.com)</td></tr>
+        </table>
+        <div class="warning">Keep your GoDaddy account secure. If someone gains access, they can redirect your domain. Enable 2FA.</div>
+
+        <!-- ============================================ -->
+        <h2><span class="num">3</span> DNS &amp; CDN - Cloudflare</h2>
+        <p class="section-description">Cloudflare manages DNS, SSL certificates, CDN caching, and hosts the site via Cloudflare Pages.</p>
+        <table>
+            <tr><th>Dashboard</th><td><a href="https://dash.cloudflare.com" target="_blank">https://dash.cloudflare.com</a></td></tr>
+            <tr><th>Account Email</th><td>tintakeimpactcorp@gmail.com</td></tr>
+            <tr><th>Plan</th><td class="normal">Free</td></tr>
+            <tr><th>SSL Mode</th><td class="normal">Full</td></tr>
+        </table>
+        <div class="note">
+            <strong>DNS Records configured:</strong>
+            <ul>
+                <li>intakeimpact.org &rarr; Cloudflare Pages</li>
+                <li>www.intakeimpact.org &rarr; Cloudflare Pages</li>
+            </ul>
+        </div>
+
+        <!-- ============================================ -->
+        <h2><span class="num">4</span> Hosting - Cloudflare Pages</h2>
+        <p class="section-description">The site auto-deploys from GitHub. Every push to the main branch triggers a new deployment.</p>
+        <table>
+            <tr><th>Dashboard</th><td><a href="https://dash.cloudflare.com" target="_blank">Cloudflare Dashboard &rarr; Workers &amp; Pages</a></td></tr>
+            <tr><th>Project Name</th><td>intakeimpact-website</td></tr>
+            <tr><th>Connected Repo</th><td><a href="https://github.com/signaturebytundeo-gif/Intake" target="_blank">signaturebytundeo-gif/Intake</a></td></tr>
+            <tr><th>Branch</th><td>main</td></tr>
+            <tr><th>Build Command</th><td class="normal">None (static site)</td></tr>
+            <tr><th>Auto-deploy</th><td class="normal">Yes - pushes to main auto-deploy</td></tr>
+        </table>
+
+        <!-- ============================================ -->
+        <h2><span class="num">5</span> Source Code - GitHub</h2>
+        <p class="section-description">All website source code and images are stored here. This is the single source of truth.</p>
+        <table>
+            <tr><th>Repository</th><td><a href="https://github.com/signaturebytundeo-gif/Intake" target="_blank">https://github.com/signaturebytundeo-gif/Intake</a></td></tr>
+            <tr><th>Account</th><td>signaturebytundeo-gif</td></tr>
+            <tr><th>Backup Repo</th><td><a href="https://github.com/Tunde-ai/intakeimpact-website" target="_blank">https://github.com/Tunde-ai/intakeimpact-website</a></td></tr>
+        </table>
+        <div class="note">
+            <strong>To update the website:</strong>
+            <ol>
+                <li>Edit files in the repository (or locally and push)</li>
+                <li>Commit and push to the <code>main</code> branch</li>
+                <li>Cloudflare Pages will auto-deploy within ~30 seconds</li>
+            </ol>
+        </div>
+
+        <!-- ============================================ -->
+        <h2><span class="num">6</span> Contact Form - Netlify</h2>
+        <p class="section-description">The contact form submissions are processed by Netlify Forms and email notifications are sent automatically.</p>
+        <table>
+            <tr><th>Dashboard</th><td><a href="https://app.netlify.com" target="_blank">https://app.netlify.com</a></td></tr>
+            <tr><th>Account Email</th><td>tintakeimpactcorp@gmail.com</td></tr>
+            <tr><th>Site Name</th><td>intakeimpact</td></tr>
+            <tr><th>Site ID</th><td>83226adc-7c72-45d2-89e8-33b7ab7c22f0</td></tr>
+            <tr><th>Form Name</th><td>contact</td></tr>
+            <tr><th>Email Notifications</th><td>tintakeimpactcorp@gmail.com</td></tr>
+        </table>
+        <div class="note">
+            <strong>To view form submissions:</strong> Log in to Netlify &rarr; intakeimpact site &rarr; Forms &rarr; contact
+        </div>
+        <div class="warning">The contact form posts to Netlify even though the site is hosted on Cloudflare. Both services must remain active for the form to work.</div>
+
+        <!-- ============================================ -->
+        <h2><span class="num">7</span> Donations - Stripe</h2>
+        <p class="section-description">Donations are processed through Stripe Payment Links. Funds go directly to the connected bank account.</p>
+        <table>
+            <tr><th>Dashboard</th><td><a href="https://dashboard.stripe.com" target="_blank">https://dashboard.stripe.com</a></td></tr>
+            <tr><th>Account Email</th><td>tintakeimpactcorp@gmail.com</td></tr>
+            <tr><th>Payment Link</th><td><a href="https://buy.stripe.com/eVqcN64k98MB39V9Qm18c00" target="_blank">https://buy.stripe.com/eVqcN64k98MB39V9Qm18c00</a></td></tr>
+        </table>
+        <div class="note">
+            <strong>To change the payment link:</strong> Create a new Payment Link in Stripe Dashboard &rarr; Payment Links, then update the <code>STRIPE_DONATION_LINK</code> variable in index.html and push to GitHub.
+        </div>
+
+        <!-- ============================================ -->
+        <h2><span class="num">8</span> How to Make Common Changes</h2>
+
+        <h3 style="margin-top: 1.5rem; font-size: 1.05rem; color: #333;">Update website content:</h3>
+        <ol>
+            <li>Go to <a href="https://github.com/signaturebytundeo-gif/Intake" target="_blank">GitHub repo</a></li>
+            <li>Click on <code>index.html</code></li>
+            <li>Click the pencil icon (edit) in the top right</li>
+            <li>Make your changes</li>
+            <li>Click "Commit changes" at the bottom</li>
+            <li>Site will auto-deploy in ~30 seconds</li>
+        </ol>
+
+        <h3 style="margin-top: 1.5rem; font-size: 1.05rem; color: #333;">Add new images:</h3>
+        <ol>
+            <li>Go to the <code>images/</code> folder in the GitHub repo</li>
+            <li>Click "Add file" &rarr; "Upload files"</li>
+            <li>Upload your images and commit</li>
+            <li>Reference them in index.html as <code>./images/your-image-name.jpg</code></li>
+        </ol>
+
+        <h3 style="margin-top: 1.5rem; font-size: 1.05rem; color: #333;">Change the Stripe donation link:</h3>
+        <ol>
+            <li>Create a new Payment Link at <a href="https://dashboard.stripe.com/payment-links" target="_blank">Stripe Dashboard</a></li>
+            <li>Edit index.html in GitHub</li>
+            <li>Search for <code>STRIPE_DONATION_LINK</code></li>
+            <li>Replace the URL with your new payment link</li>
+            <li>Commit the change</li>
+        </ol>
+
+        <h3 style="margin-top: 1.5rem; font-size: 1.05rem; color: #333;">Change form notification email:</h3>
+        <ol>
+            <li>Log in to <a href="https://app.netlify.com" target="_blank">Netlify</a></li>
+            <li>Go to Site settings &rarr; Forms &rarr; Form notifications</li>
+            <li>Edit the email notification hook</li>
+        </ol>
+
+        <!-- ============================================ -->
+        <h2><span class="num">9</span> All Account Logins Summary</h2>
+        <table>
+            <tr><th>Service</th><td class="normal"><strong>URL</strong></td></tr>
+            <tr><th>GoDaddy (domain)</th><td><a href="https://dcc.godaddy.com" target="_blank">dcc.godaddy.com</a></td></tr>
+            <tr><th>Cloudflare (DNS/hosting)</th><td><a href="https://dash.cloudflare.com" target="_blank">dash.cloudflare.com</a></td></tr>
+            <tr><th>GitHub (source code)</th><td><a href="https://github.com/signaturebytundeo-gif" target="_blank">github.com/signaturebytundeo-gif</a></td></tr>
+            <tr><th>Netlify (contact form)</th><td><a href="https://app.netlify.com" target="_blank">app.netlify.com</a></td></tr>
+            <tr><th>Stripe (donations)</th><td><a href="https://dashboard.stripe.com" target="_blank">dashboard.stripe.com</a></td></tr>
+        </table>
+        <div class="warning">All accounts should use <strong>tintakeimpactcorp@gmail.com</strong> and have <strong>2FA enabled</strong>. Store passwords in a secure password manager and share access with at least one other trusted board member.</div>
+
+        <!-- ============================================ -->
+        <h2><span class="num">10</span> Emergency Contacts</h2>
+        <table>
+            <tr><th>Primary Admin</th><td class="normal">Tunde Ogunjulugbe - tintakeimpactcorp@gmail.com</td></tr>
+            <tr><th>GitHub (backup)</th><td class="normal">Tunde-ai (backup repo at github.com/Tunde-ai/intakeimpact-website)</td></tr>
+        </table>
+        <div class="note">If the site goes down: Check Cloudflare status first, then GitHub repo, then Netlify (for forms). The backup Netlify URL <a href="https://intakeimpact.netlify.app">intakeimpact.netlify.app</a> can serve as a temporary fallback.</div>
+
+        <p class="footer-note">
+            InTake Impact Corp &bull; 501(c)(3) Non-Profit Organization<br>
+            This document was created February 19, 2026. Keep it updated when credentials or services change.
+        </p>
+    </div>
+</body>
+</html>
