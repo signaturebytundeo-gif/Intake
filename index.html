@@ -1,0 +1,4538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InTake Impact Corp - 501(c)(3) non-profit supporting U.S. Veterans and Gold Star Families through community programs, employment initiatives, and awareness campaigns.">
+    <meta name="keywords" content="veterans, Gold Star families, non-profit, charity, MVP, Mitch Richmond, veterans support, community outreach">
+    <meta name="author" content="InTake Impact Corp">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="InTake Impact Corp - Supporting America's Most Valuable Players">
+    <meta property="og:description" content="501(c)(3) non-profit supporting U.S. Veterans and Gold Star Families">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://intakeimpact.org">
+    <meta property="og:image" content="./images/Screenshot_2026-02-10_at_2_25_53_PM.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="InTake Impact Corp">
+    <meta name="twitter:description" content="Supporting U.S. Veterans and Gold Star Families">
+
+    <title>InTake Impact Corp - Supporting America's Most Valuable Players</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ============================================
+           CSS RESET & BASE STYLES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #0a1628;
+            --primary-mid: #0d2137;
+            --primary-teal: #088395;
+            --accent-cyan: #05BFDB;
+            --accent-light: #00FFCA;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --gray-light: #e8f4f8;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--primary-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        h4 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(8, 131, 149, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(8, 131, 149, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), #f4d03f);
+            color: var(--primary-dark);
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            backdrop-filter: blur(10px);
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           SCROLL PROGRESS BAR
+           ============================================ */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-teal), var(--accent-cyan), var(--accent-light));
+            z-index: 10000;
+            transition: width 0.1s ease;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            background: rgba(10, 22, 40, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 50px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .nav-logo img:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-cyan);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-donate {
+            position: relative;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 255, 202, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 255, 202, 0.8);
+            }
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--white);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* ============================================
+           HERO SLIDESHOW SECTION
+           ============================================ */
+        #hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: var(--primary-dark);
+            padding: 0;
+        }
+
+        .slideshow-viewport {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .slideshow-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .slide-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        /* Per-slide image focus points for mobile cropping */
+        .slide:nth-child(1) .slide-bg img { object-position: 60% center; }  /* Ambassador - Mitch basketball photos */
+        .slide:nth-child(2) .slide-bg img { object-position: 35% center; }  /* Mission - focus on hands image */
+        .slide:nth-child(3) .slide-bg img { object-position: center center; } /* MVPs */
+        .slide:nth-child(4) .slide-bg img { object-position: 65% center; }  /* Highlights - focus on Mitch photo */
+        .slide:nth-child(5) .slide-bg img { object-position: 60% 20%; }     /* Fundraising - focus on Mitch + top */
+        .slide:nth-child(6) .slide-bg img { object-position: 70% center; }  /* Beverages - focus on the can */
+        .slide:nth-child(7) .slide-bg img { object-position: center center; } /* Donate */
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.75), rgba(13, 33, 55, 0.7));
+            z-index: 2;
+            transition: background 0.3s;
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 4;
+            color: var(--white);
+            max-width: 900px;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+        }
+
+        .slide.active .slide-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-content h1 {
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+        }
+
+        .slide-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--gray-light);
+            font-weight: 300;
+            max-width: 750px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slide-content .btn {
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+
+        /* Highlights video links */
+        .highlights-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            align-items: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .highlight-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-cyan);
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 0.5rem 1.2rem;
+            border: 1px solid rgba(5, 191, 219, 0.3);
+            border-radius: 8px;
+            background: rgba(5, 191, 219, 0.08);
+            transition: all 0.3s ease;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .highlight-link:hover {
+            background: rgba(5, 191, 219, 0.2);
+            border-color: var(--accent-cyan);
+            color: var(--accent-light);
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(5, 191, 219, 0.2);
+        }
+
+        .highlight-link i {
+            color: var(--accent-light);
+            font-size: 1.1rem;
+        }
+
+        /* Particles overlay on slideshow */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 20s infinite;
+        }
+
+        .particle:nth-child(1) { width: 4px; height: 4px; left: 10%; animation-duration: 15s; }
+        .particle:nth-child(2) { width: 6px; height: 6px; left: 30%; animation-duration: 20s; animation-delay: 2s; }
+        .particle:nth-child(3) { width: 3px; height: 3px; left: 50%; animation-duration: 18s; animation-delay: 4s; }
+        .particle:nth-child(4) { width: 5px; height: 5px; left: 70%; animation-duration: 22s; animation-delay: 1s; }
+        .particle:nth-child(5) { width: 4px; height: 4px; left: 90%; animation-duration: 16s; animation-delay: 3s; }
+        .particle:nth-child(6) { width: 7px; height: 7px; left: 20%; animation-duration: 25s; }
+        .particle:nth-child(7) { width: 3px; height: 3px; left: 60%; animation-duration: 19s; animation-delay: 5s; }
+        .particle:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-duration: 21s; animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Badge overlay */
+        .hero-badge-overlay {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 6;
+            pointer-events: none;
+        }
+
+        .hero-badge-overlay .badge {
+            color: var(--accent-light);
+            border-color: var(--accent-light);
+            background: rgba(10, 22, 40, 0.6);
+            backdrop-filter: blur(10px);
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        /* Arrow navigation */
+        .slide-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 6;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .slide-arrow:hover {
+            background: rgba(8, 131, 149, 0.6);
+            border-color: var(--accent-cyan);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .slide-arrow-left {
+            left: 20px;
+        }
+
+        .slide-arrow-right {
+            right: 20px;
+        }
+
+        /* Dot indicators */
+        .slide-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 6;
+            display: flex;
+            gap: 12px;
+        }
+
+        .slide-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .slide-dot.active {
+            background: var(--accent-cyan);
+            border-color: var(--white);
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(5, 191, 219, 0.6);
+        }
+
+        .slide-dot:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 6;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator i {
+            font-size: 2rem;
+            color: var(--accent-light);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-20px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        #about {
+            background: linear-gradient(180deg, var(--white), var(--gray-light));
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary-mid);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .about-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .about-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-teal);
+            box-shadow: 0 15px 40px rgba(8, 131, 149, 0.3);
+        }
+
+        .about-card i {
+            font-size: 3rem;
+            color: var(--primary-teal);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .about-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .about-card p {
+            color: var(--primary-mid);
+            line-height: 1.8;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .stat-item {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.6s ease;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-teal);
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--primary-mid);
+            font-weight: 600;
+        }
+
+        /* ============================================
+           MVP SECTION
+           ============================================ */
+        #mvp {
+            background: var(--primary-dark);
+            color: var(--white);
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mvp-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .mvp-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .mvp-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.95), rgba(8, 131, 149, 0.85));
+            z-index: 2;
+        }
+
+        .mvp-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mvp-badge {
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .mvp-quote {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.3;
+        }
+
+        .mvp-text {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            color: var(--gray-light);
+        }
+
+        .accordion {
+            max-width: 800px;
+            margin: 3rem auto 0;
+            text-align: left;
+        }
+
+        .accordion-item {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .accordion-header h4 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .accordion-header i {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content-inner {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .accordion-content p {
+            margin: 0;
+            color: var(--gray-light);
+        }
+
+        /* ============================================
+           PROGRAMS SECTION
+           ============================================ */
+        #programs {
+            background: var(--gray-light);
+        }
+
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .program-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(8, 131, 149, 0.2);
+        }
+
+        .program-icon {
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .program-icon i {
+            font-size: 3rem;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .program-card:hover .program-icon i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .program-body {
+            padding: 2rem;
+        }
+
+        .program-body h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .program-body p {
+            color: var(--primary-mid);
+            line-height: 1.8;
+        }
+
+        .program-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .program-details-inner {
+            padding: 1rem 0;
+            border-top: 1px solid var(--gray-light);
+            margin-top: 1rem;
+        }
+
+        .program-card.expanded .program-details {
+            max-height: 500px;
+        }
+
+        .expand-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary-teal);
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .expand-btn i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .program-card.expanded .expand-btn i {
+            transform: rotate(180deg);
+        }
+
+        /* ============================================
+           SPONSORSHIP SECTION
+           ============================================ */
+        #sponsorship {
+            background: linear-gradient(180deg, var(--white), var(--gray-light));
+        }
+
+        .sponsorship-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .donation-progress {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .progress-bar-container {
+            background: var(--gray-light);
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-teal), var(--accent-cyan));
+            width: 0%;
+            transition: width 1.5s ease;
+            position: relative;
+        }
+
+        .progress-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .sponsorship-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tier-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            position: relative;
+            transform-style: preserve-3d;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .tier-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tier-card:hover {
+            transform: perspective(1000px) rotateY(5deg) rotateX(5deg) translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .tier-card.platinum {
+            background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
+            border: 3px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tier-card.platinum::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            animation: gold-shimmer 3s infinite;
+        }
+
+        @keyframes gold-shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary-teal);
+            color: var(--white);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .tier-card.platinum .tier-badge {
+            background: var(--gold);
+            color: var(--primary-dark);
+        }
+
+        .tier-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1.5rem;
+        }
+
+        .tier-benefits {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .tier-benefits li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .tier-benefits li:last-child {
+            border-bottom: none;
+        }
+
+        .tier-benefits i {
+            color: var(--primary-teal);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .tier-card.platinum .tier-benefits i {
+            color: var(--gold);
+        }
+
+        .custom-partnership {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-mid));
+            color: var(--white);
+            text-align: center;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+        }
+
+        .custom-partnership h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .custom-partnership p {
+            margin-bottom: 2rem;
+            color: var(--gray-light);
+        }
+
+        /* ============================================
+           LEADERSHIP SECTION
+           ============================================ */
+        #leadership {
+            background: var(--primary-dark);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leadership-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .leadership-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+        }
+
+        .leadership-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.95), rgba(8, 131, 149, 0.9));
+            z-index: 2;
+        }
+
+        .leadership-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .leader-card {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .leader-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .leader-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            overflow: hidden;
+            border: 4px solid var(--primary-teal);
+            box-shadow: 0 0 30px rgba(5, 191, 219, 0.4);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .leader-card:hover .leader-photo {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(5, 191, 219, 0.7);
+        }
+
+        .leader-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .leader-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .leader-title {
+            font-size: 1rem;
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .leader-bio {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .leader-card:hover .leader-bio {
+            max-height: 300px;
+        }
+
+        .leader-bio-inner {
+            padding: 1.5rem;
+        }
+
+        .leader-bio p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--gray-light);
+        }
+
+        /* ============================================
+           BEVERAGES PARTNERSHIP SECTION
+           ============================================ */
+        #beverages {
+            background: linear-gradient(135deg, var(--gray-light), var(--white));
+        }
+
+        .beverages-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .beverages-text h3 {
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .beverages-text p {
+            color: var(--primary-mid);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .beverages-stat {
+            text-align: center;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .beverages-stat-number {
+            font-size: 6rem;
+            font-weight: 900;
+            color: var(--primary-teal);
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .beverages-stat-text {
+            font-size: 1.1rem;
+            color: var(--primary-mid);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           VETERANS INITIATIVE SECTION
+           ============================================ */
+        #veterans-initiative {
+            background: var(--primary-mid);
+            color: var(--white);
+        }
+
+        .initiative-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .initiative-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-light);
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.95rem;
+            color: var(--gray-light);
+        }
+
+        .testimonials {
+            margin: 4rem 0;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            min-width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .testimonial-quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--gray-light);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--accent-light);
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background: var(--accent-light);
+            transform: scale(1.2);
+        }
+
+        .timeline {
+            margin: 4rem 0;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-date {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .timeline-content h4 {
+            color: var(--accent-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content p {
+            color: var(--gray-light);
+        }
+
+        .fund-allocation {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .fund-allocation h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--white);
+        }
+
+        .allocation-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .allocation-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .allocation-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .allocation-bar {
+            background: rgba(255, 255, 255, 0.2);
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .allocation-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-teal), var(--accent-cyan));
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            padding: 0 1rem;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .initiative-cta {
+            text-align: center;
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        #contact {
+            background: var(--gray-light);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .contact-details h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--primary-mid);
+            margin: 0;
+        }
+
+        .contact-details a {
+            color: var(--primary-teal);
+            font-weight: 600;
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gray-light);
+            border-radius: 10px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-teal);
+            box-shadow: 0 0 0 3px rgba(8, 131, 149, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-error {
+            color: #e74c3c;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .form-group.error input,
+        .form-group.error textarea,
+        .form-group.error select {
+            border-color: #e74c3c;
+        }
+
+        .form-group.error .form-error {
+            display: block;
+        }
+
+        .form-success {
+            background: #27ae60;
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .ways-to-support {
+            margin-top: 4rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .support-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(8, 131, 149, 0.2);
+        }
+
+        .support-card i {
+            font-size: 3rem;
+            color: var(--primary-teal);
+            margin-bottom: 1rem;
+        }
+
+        .support-card h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .support-card p {
+            color: var(--primary-mid);
+            font-size: 0.95rem;
+        }
+
+        .map-container {
+            margin-top: 4rem;
+            height: 400px;
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--primary-mid);
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            color: var(--primary-teal);
+            margin-bottom: 1rem;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--gray-light);
+            margin-bottom: 1rem;
+        }
+
+        .nonprofit-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(212, 175, 55, 0.2);
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-top: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-light);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+            padding-left: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .newsletter-form button {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-teal);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--accent-cyan);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-teal);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray-light);
+        }
+
+        /* ============================================
+           SECTION BACK TO TOP BUTTONS
+           ============================================ */
+        .section-top-btn {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+        }
+
+        .section-top-btn a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.5rem;
+            background: rgba(8, 131, 149, 0.15);
+            color: var(--primary-teal);
+            border: 1.5px solid var(--primary-teal);
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition);
+        }
+
+        .section-top-btn a:hover {
+            background: var(--primary-teal);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(8, 131, 149, 0.3);
+        }
+
+        /* Dark section variant */
+        #leadership .section-top-btn a,
+        #veterans-initiative .section-top-btn a {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent-cyan);
+            border-color: var(--accent-cyan);
+        }
+
+        #leadership .section-top-btn a:hover,
+        #veterans-initiative .section-top-btn a:hover {
+            background: var(--accent-cyan);
+            color: var(--primary-dark);
+        }
+
+        /* ============================================
+           BACK TO TOP BUTTON
+           ============================================ */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(8, 131, 149, 0.4);
+            transition: var(--transition);
+            z-index: 9998;
+        }
+
+        #back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(8, 131, 149, 0.6);
+        }
+
+        #back-to-top.visible {
+            display: flex;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 968px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: rgba(10, 22, 40, 0.98);
+                flex-direction: column;
+                padding: 5rem 2rem;
+                transition: right 0.3s ease;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .about-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .beverages-content {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            /* Slideshow responsive - tablets */
+            #hero {
+                height: 100vh;
+                height: 100svh; /* Small viewport height - accounts for mobile browser bars */
+            }
+
+            .slide-overlay {
+                background: linear-gradient(135deg, rgba(10, 22, 40, 0.82), rgba(13, 33, 55, 0.78));
+            }
+
+            .slide-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .slide-arrow-left { left: 10px; }
+            .slide-arrow-right { right: 10px; }
+
+            .slide-content {
+                padding: 1.5rem;
+                max-width: 85%;
+            }
+
+            .slide-content h1 {
+                font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+            }
+
+            .slide-content p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-badge-overlay {
+                top: 85px;
+            }
+
+            .hero-badge-overlay .badge {
+                font-size: 0.7rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            section {
+                padding: 3rem 1rem;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+
+            /* Slideshow - phone portrait: image on top, text on bottom */
+            #hero {
+                height: 100vh;
+                height: 100svh;
+            }
+
+            .slide {
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+                padding-top: 70px;
+            }
+
+            .slide-bg {
+                position: relative;
+                width: 100%;
+                height: 45%;
+                min-height: 200px;
+                flex-shrink: 0;
+                background: var(--primary-dark);
+            }
+
+            .slide-bg img {
+                object-fit: contain;
+                object-position: center center;
+                background: var(--primary-dark);
+            }
+
+            .slide-overlay {
+                background: none;
+                height: 45%;
+                background: linear-gradient(
+                    180deg,
+                    rgba(10, 22, 40, 0.15) 0%,
+                    rgba(10, 22, 40, 0.3) 70%,
+                    rgba(10, 22, 40, 0.6) 100%
+                );
+            }
+
+            .slide-content {
+                position: relative;
+                z-index: 4;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1.5rem 1.2rem 80px;
+                max-width: 100%;
+                text-align: center;
+                background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-mid) 100%);
+                opacity: 1;
+                transform: none;
+            }
+
+            .slide.active .slide-content {
+                opacity: 1;
+                transform: none;
+            }
+
+            .slide-content h1 {
+                font-size: clamp(1.3rem, 5.5vw, 1.8rem);
+                margin-bottom: 0.6rem;
+                line-height: 1.3;
+            }
+
+            .slide-content p {
+                font-size: 0.9rem;
+                margin-bottom: 1.2rem;
+                margin-left: 0;
+                line-height: 1.5;
+            }
+
+            .slide-content .btn {
+                font-size: 0.9rem;
+                padding: 0.75rem 2rem;
+                width: auto;
+                min-width: 200px;
+                text-align: center;
+            }
+
+            .highlights-links {
+                gap: 0.4rem;
+            }
+
+            .highlight-link {
+                font-size: 0.85rem;
+                padding: 0.45rem 0.8rem;
+            }
+
+            .highlight-link i {
+                font-size: 0.9rem;
+            }
+
+            .slide-arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 0.75rem;
+                top: 30%;
+                transform: translateY(-50%);
+                background: rgba(10, 22, 40, 0.6);
+            }
+
+            .slide-arrow-left { left: 8px; }
+            .slide-arrow-right { right: 8px; }
+
+            .slide-dots {
+                bottom: 15px;
+                gap: 6px;
+            }
+
+            .slide-dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .slide-dot.active {
+                width: 20px;
+                border-radius: 4px;
+            }
+
+            .hero-badge-overlay {
+                display: none;
+            }
+
+            .scroll-indicator {
+                bottom: 45px;
+                display: none;
+            }
+
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sponsorship-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .impact-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 380px) {
+            .slide-content h1 {
+                font-size: 1.2rem;
+            }
+
+            .slide-content p {
+                font-size: 0.8rem;
+            }
+
+            .slide-content .btn {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.5rem;
+                min-width: 160px;
+            }
+
+            .slide-arrow {
+                width: 26px;
+                height: 26px;
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Deck images - constrain on mobile */
+        @media (max-width: 640px) {
+            .deck-image {
+                border-radius: 10px;
+            }
+
+            .deck-image:hover {
+                transform: none;
+            }
+
+            .deck-image-featured {
+                max-width: 100%;
+            }
+        }
+
+        /* Landscape phones - images display beautifully */
+        @media (max-height: 500px) and (orientation: landscape) {
+            #hero {
+                height: 100vh;
+                height: 100svh;
+            }
+
+            .slide {
+                align-items: center;
+                padding-bottom: 0;
+            }
+
+            .slide-content {
+                text-align: center;
+                max-width: 70%;
+            }
+
+            .slide-content h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .slide-content p {
+                font-size: 0.85rem;
+                margin-bottom: 1rem;
+            }
+
+            .slide-content .btn {
+                width: auto;
+                padding: 0.6rem 1.5rem;
+                font-size: 0.85rem;
+            }
+
+            .hero-badge-overlay {
+                display: none;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        /* ============================================
+           PRINT STYLES
+           ============================================ */
+        @media print {
+            nav,
+            #back-to-top,
+            .scroll-indicator,
+            .particles,
+            .mobile-menu-toggle,
+            .slide-arrow,
+            .slide-dots,
+            .hero-badge-overlay {
+                display: none !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+
+            .slide-bg,
+            .mvp-background,
+            .leadership-background {
+                opacity: 0.1 !important;
+            }
+        }
+
+        /* ============================================
+           ACCESSIBILITY
+           ============================================ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        *:focus-visible {
+            outline: 3px solid var(--accent-cyan);
+            outline-offset: 3px;
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease;
+        }
+
+        /* Staggered animation delays */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+        .stagger-4 { transition-delay: 0.4s; }
+        .stagger-5 { transition-delay: 0.5s; }
+        .stagger-6 { transition-delay: 0.6s; }
+
+        /* ============================================
+           DECK SLIDE IMAGES
+           ============================================ */
+        .deck-image {
+            width: 100%;
+            border-radius: 15px;
+            border: 2px solid rgba(5, 191, 219, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .deck-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(5, 191, 219, 0.2);
+        }
+
+        .deck-image-gold {
+            border: 3px solid var(--gold);
+        }
+
+        .deck-image-featured {
+            max-width: 500px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .hero-brand-element {
+            position: relative;
+            z-index: 4;
+            max-width: 400px;
+            margin: 3rem auto 0;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hero-brand-element.visible {
+            animation: fadeInUp 1s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        .mission-banner {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 40px;
+        }
+
+        .community-visual {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .community-visual h3 {
+            margin-bottom: 2rem;
+            color: var(--primary-dark);
+        }
+
+        .mvp-featured-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .mvp-parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .mvp-parallax-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .program-card-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .ambassador-banner {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .ambassador-banner-wrapper {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .ambassador-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 22, 40, 0.95), transparent);
+            padding: 2rem;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .ambassador-overlay h3 {
+            color: var(--white);
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .veteran-spotlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .veteran-spotlight-image {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        .veteran-spotlight-text h3 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .veteran-spotlight-text p {
+            color: var(--gray-light);
+        }
+
+        .ambassador-subsection {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .ambassador-subsection h3 {
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .product-showcase {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .product-showcase img {
+            max-width: 350px;
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 0 30px rgba(5, 191, 219, 0.4));
+        }
+
+        .testimonial-image-banner {
+            margin: 3rem 0;
+        }
+
+        .thank-you-banner {
+            margin: 3rem 0 0;
+        }
+
+        @media (max-width: 968px) {
+            .mvp-featured-content,
+            .veteran-spotlight {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-brand-element {
+                max-width: 300px;
+            }
+        }
+        /* ============================================
+           DONATION MODAL
+           ============================================ */
+        .donate-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .donate-overlay.active {
+            display: flex;
+        }
+        .donate-modal {
+            background: linear-gradient(135deg, var(--primary-mid), var(--primary-dark));
+            border: 2px solid var(--accent-cyan);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 520px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(5, 191, 219, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .donate-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.8rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        .donate-close:hover {
+            opacity: 1;
+        }
+        .donate-modal h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .donate-modal .donate-subtitle {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        .donate-amounts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+        .donate-amount-btn {
+            padding: 15px;
+            border: 2px solid rgba(5, 191, 219, 0.3);
+            border-radius: 12px;
+            background: rgba(5, 191, 219, 0.05);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .donate-amount-btn:hover,
+        .donate-amount-btn.selected {
+            border-color: var(--accent-cyan);
+            background: rgba(5, 191, 219, 0.15);
+            box-shadow: 0 0 20px rgba(5, 191, 219, 0.2);
+        }
+        .donate-amount-btn.selected {
+            background: rgba(5, 191, 219, 0.25);
+        }
+        .donate-custom {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(5, 191, 219, 0.3);
+            border-radius: 12px;
+            background: rgba(5, 191, 219, 0.05);
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            outline: none;
+        }
+        .donate-custom::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        .donate-custom:focus {
+            border-color: var(--accent-cyan);
+        }
+        .donate-frequency {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+        .donate-freq-btn {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid rgba(5, 191, 219, 0.3);
+            border-radius: 10px;
+            background: transparent;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+        .donate-freq-btn:hover,
+        .donate-freq-btn.selected {
+            border-color: var(--accent-cyan);
+            background: rgba(5, 191, 219, 0.15);
+        }
+        .donate-submit {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--accent-cyan));
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(5, 191, 219, 0.3);
+        }
+        .donate-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(5, 191, 219, 0.5);
+        }
+        .donate-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .donate-secure {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+        .donate-secure i {
+            color: var(--accent-light);
+            margin-right: 5px;
+        }
+        .donate-tax {
+            text-align: center;
+            margin-top: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--gold);
+        }
+        @media (max-width: 480px) {
+            .donate-amounts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .donate-modal {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#hero">
+                    <img src="./images/Screenshot_2026-02-10_at_2_25_53_PM.png" alt="InTake Impact Corp Logo" loading="eager">
+                </a>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#sponsorship">Sponsor</a></li>
+                <li><a href="#veterans-initiative">Veterans Initiative</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#donate" class="btn btn-primary nav-donate">Donate Now</a></li>
+            </ul>
+
+            <div class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Slideshow Section -->
+        <section id="hero">
+            <div class="slideshow-viewport" id="slideshow">
+                <div class="slideshow-track" id="slideshow-track">
+
+                    <!-- Slide 1: Mitch Richmond - Ambassador -->
+                    <div class="slide active">
+                        <div class="slide-bg">
+                            <img src="./images/Xavier_-_Mitch_Rishmad_-_Secod_ad_design_R9-01-1536x864.jpg" alt="Ambassador Mitch Richmond - NBA Hall of Famer" loading="eager">
+                        </div>
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1>NBA Hall of Famer<br>Mitch &ldquo;The Rock&rdquo; Richmond</h1>
+                            <p>Co-Founder &amp; MVP Ambassador &mdash; Leading the charge for U.S. Veterans and Gold Star Families</p>
+                            <a href="#leadership" class="btn btn-primary">Meet Our Leadership</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Our Mission -->
+                    <div class="slide">
+                        <div class="slide-bg">
+                            <img src="./images/MISSION_-_Ad_Deisgn_R6-01-1-1536x864.jpg" alt="Our Mission" loading="lazy">
+                        </div>
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1>Our Mission</h1>
+                            <p>We firmly believe that meaningful impact begins with the individuals we serve</p>
+                            <a href="#about" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: MVPs Campaign -->
+                    <div class="slide">
+                        <div class="slide-bg">
+                            <img src="./images/Intake_Impact_-_New_Ad_Design_R12-01-1-1536x864.jpg" alt="Most Valuable Players Campaign" loading="lazy">
+                        </div>
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1>Most Valuable Players Campaign</h1>
+                            <p>U.S. Veterans Are The MVPs Among American Citizens</p>
+                            <a href="#veterans-initiative" class="btn btn-primary">Veterans Initiative</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Highlights with video links -->
+                    <div class="slide">
+                        <div class="slide-bg">
+                            <img src="./images/Highlights_Ad_Design_New_R7-01-1536x864.jpg" alt="Mitch Richmond Highlights" loading="lazy">
+                        </div>
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1>Highlights</h1>
+                            <div class="highlights-links">
+                                <a href="https://www.nbcmiami.com/video/on-air/as-seen-on/legend-comes-home-boyd-anderson-high-honors-basketball-star-mitch-richmond/3494883/" target="_blank" rel="noopener noreferrer" class="highlight-link">
+                                    <i class="fas fa-play-circle"></i> Boyd Anderson High School
+                                </a>
+                                <a href="https://www.share.google/HctSPMwf27rZAgxgR" target="_blank" rel="noopener noreferrer" class="highlight-link">
+                                    <i class="fas fa-play-circle"></i> They Call Me The Rock!
+                                </a>
+                                <a href="https://www.share.google/k7EEYeAWXXwAogrqw" target="_blank" rel="noopener noreferrer" class="highlight-link">
+                                    <i class="fas fa-play-circle"></i> Michael Jordan's Respect!
+                                </a>
+                                <a href="https://www.share.google/YbdwKKmI74vAawp6Z" target="_blank" rel="noopener noreferrer" class="highlight-link">
+                                    <i class="fas fa-play-circle"></i> All-Star MVP
+                                </a>
+                                <a href="https://www.share.google/YUL52Elhfc7maGYaB" target="_blank" rel="noopener noreferrer" class="highlight-link">
+                                    <i class="fas fa-play-circle"></i> NBA Hall of Fame Induction
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Sponsorship -->
+                    <div class="slide">
+                        <div class="slide-bg">
+                            <img src="./images/Fundraising-postcard-Posts-card-design-R10_page-0001.jpg" alt="Become a Sponsor" loading="lazy">
+                        </div>
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1>Become a Sponsor</h1>
+                            <p>Partner with us to make a lasting impact on veterans' lives</p>
+                            <a href="#sponsorship" class="btn btn-primary">Sponsor Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: Beverages Partnership -->
+                    <div class="slide">
+                        <div class="slide-bg">
+                            <img src="./images/New_Can_ad_design_R8-01-01-1-1536x864.jpg" alt="InTake Energy + Water" loading="lazy">
+                        </div>
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1>InTake Energy + Water</h1>
+                            <p>100% of proceeds from MVPs Special Edition support our veterans programs</p>
+                            <a href="#beverages" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 7: Donate -->
+                    <div class="slide">
+                        <div class="slide-bg">
+                            <img src="./images/Intake_Impact_-_New_Ad_Design_R13-02-1-1536x864.jpg" alt="Support Our Mission" loading="lazy">
+                        </div>
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <h1>Support Our Mission</h1>
+                            <p>Your donation is tax-deductible and directly supports U.S. Veterans and Gold Star Families</p>
+                            <a href="#donate" class="btn btn-gold">Donate Now</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Particles overlay -->
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+
+            <!-- Badge overlay -->
+            <div class="hero-badge-overlay">
+                <span class="badge">501(c)(3) Non-Profit Organization</span>
+            </div>
+
+            <!-- Arrow navigation -->
+            <button class="slide-arrow slide-arrow-left" id="slide-prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slide-arrow slide-arrow-right" id="slide-next" aria-label="Next slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Dot indicators -->
+            <div class="slide-dots" id="slide-dots">
+                <span class="slide-dot active" data-slide="0"></span>
+                <span class="slide-dot" data-slide="1"></span>
+                <span class="slide-dot" data-slide="2"></span>
+                <span class="slide-dot" data-slide="3"></span>
+                <span class="slide-dot" data-slide="4"></span>
+                <span class="slide-dot" data-slide="5"></span>
+                <span class="slide-dot" data-slide="6"></span>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About InTake Impact Corp</h2>
+                <p class="section-subtitle">
+                    Building a community-driven support system for those who served our nation
+                </p>
+
+                <!-- Mission Banner -->
+                <img src="./images/MISSION_-_Ad_Deisgn_R6-01-1-1536x864.jpg"
+                     alt="Our Mission - Hands Together on American Flag"
+                     class="deck-image mission-banner"
+                     data-animate
+                     loading="lazy">
+
+                <div class="about-cards">
+                    <div class="about-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>
+                            We firmly believe that meaningful impact begins with the individuals we serve.
+                            Our mission is to support U.S. veterans and Gold Star families by developing
+                            programs and systems that facilitate mutual aid, with a strong emphasis on
+                            raising awareness through community outreach efforts.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Our Approach</h3>
+                        <p>
+                            InTake Impact Corp goes beyond the traditional charity model. We maintain
+                            operations through in-house marketing and the Most Valuable Players (MVPs)
+                            public service announcement campaigns, producing impactful print, audio, and
+                            film PSAs that support our donors, sponsors, and community.
+                        </p>
+                    </div>
+
+                    <div class="about-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Our Impact</h3>
+                        <p>
+                            Together, we are creating a system that enables communities to establish
+                            mutual aid for U.S. veterans and Gold Star families. We believe sharing
+                            resources—regardless of their form—can eliminate barriers and unlock
+                            opportunities that humility can present to society.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Our Community Visual -->
+                <div class="community-visual" data-animate>
+                    <h3>Our Community of Support</h3>
+                    <img src="./images/Xavier_-_OVERVIEW_-_Ad_design_R9-01-1536x864.jpg"
+                         alt="Our Community - Americans United in Support"
+                         class="deck-image"
+                         loading="lazy">
+                </div>
+
+                <div class="impact-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Veterans Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">Community Events</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">$K+ Raised</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="6">0</div>
+                        <div class="stat-label">Board Members</div>
+                    </div>
+                </div>
+                <div class="section-top-btn"><a href="#hero"><i class="fas fa-arrow-up"></i> Back to Top</a></div>
+            </div>
+        </section>
+
+        <!-- MVP Section -->
+        <section id="mvp">
+            <div class="mvp-background">
+                <img src="./images/Screenshot_2026-02-10_at_2_25_53_PM.png" alt="U.S. Veterans MVP" loading="lazy">
+            </div>
+            <div class="mvp-parallax-bg">
+                <img src="./images/Intake_Impact_-_New_Ad_Design_R12-01-1-1536x864.jpg" alt="The Impact - Veteran Salute" loading="lazy">
+            </div>
+            <div class="mvp-overlay"></div>
+
+            <div class="mvp-content container">
+                <span class="badge mvp-badge">MOST VALUABLE PLAYERS / U.S. VETERANS</span>
+                <h2 class="mvp-quote" id="mvp-quote">U.S. Veterans Are The MVPs Among American Citizens</h2>
+                <p class="mvp-text">
+                    Our MVPs campaign acknowledges the bravery, dedication, and sacrifices of those who
+                    served, while also recognizing Gold Star families who have lost loved ones in the line of duty.
+                </p>
+
+                <!-- MVP Featured Image -->
+                <div style="margin: 3rem 0;" data-animate>
+                    <img src="./images/Fundraising-postcard-Posts-card-design-R10_page-0001.jpg"
+                         alt="Mitch Richmond NBA All-Star MVP Veterans Fundraising Campaign"
+                         class="deck-image deck-image-gold deck-image-featured"
+                         loading="lazy">
+                </div>
+
+                <div class="accordion">
+                    <h3 style="text-align: center; margin-bottom: 2rem;">Why Veterans Matter</h3>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Sacrifice and Service</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner">
+                                <p>
+                                    Veterans have dedicated years of their lives to protecting our freedoms and
+                                    way of life. Many have faced danger, hardship, and separation from loved ones
+                                    in service to our nation.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Transition Challenges</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner">
+                                <p>
+                                    Returning to civilian life presents unique challenges including employment,
+                                    housing, healthcare access, and mental health support. Our programs address
+                                    these critical needs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Community Support</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner">
+                                <p>
+                                    Creating strong community networks ensures veterans and Gold Star families
+                                    never feel alone. Through mutual aid and outreach, we build lasting support systems.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Gold Star Families</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner">
+                                <p>
+                                    Gold Star families have made the ultimate sacrifice, losing loved ones in
+                                    service to our country. They deserve our unwavering support, recognition,
+                                    and assistance in honoring their fallen heroes.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs">
+            <div class="container">
+                <h2 class="section-title">Our Programs</h2>
+                <p class="section-subtitle">
+                    Comprehensive initiatives designed to support, empower, and honor our veterans and Gold Star families
+                </p>
+
+                <div class="programs-grid">
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="program-body">
+                            <h3>MVPs PSA Campaign</h3>
+                            <p>
+                                Our flagship awareness initiative featuring print, audio, and film public service
+                                announcements led by Ambassador Mitch 'The Rock' Richmond. Through innovative media
+                                campaigns, we raise awareness that U.S. veterans truly are the Most Valuable Players
+                                among American citizens.
+                            </p>
+                            <div class="program-details">
+                                <div class="program-details-inner">
+                                    <p><strong>Impact:</strong> Reaching millions through multi-platform campaigns</p>
+                                    <p><strong>Led by:</strong> NBA Hall of Famer Mitch Richmond</p>
+                                </div>
+                            </div>
+                            <span class="expand-btn">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="program-body">
+                            <!-- Health & Wellness Program Image -->
+                            <img src="./images/InTake_Lifestyle_Health__Wellness_Ad_Design_R1-01-1536x864.jpg"
+                                 alt="InTake Lifestyle Health & Wellness Program"
+                                 class="deck-image program-card-image"
+                                 loading="lazy">
+                            <h3>InTake Lifestyle: Health &amp; Wellness</h3>
+                            <p>
+                                Dedicated to enhancing the mental and physical well-being of U.S. veterans and
+                                Gold Star families. We collaborate with trainers, psychiatrists, psychologists,
+                                social workers, and advocates to offer workshops, coaching, exercise programs,
+                                healthy eating initiatives, and counseling sessions.
+                            </p>
+                            <div class="program-details">
+                                <div class="program-details-inner">
+                                    <p><strong>Services:</strong> Mental health counseling, fitness programs, nutrition guidance</p>
+                                    <p><strong>Partners:</strong> Licensed professionals and certified coaches</p>
+                                </div>
+                            </div>
+                            <span class="expand-btn">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <div class="program-body">
+                            <!-- Volunteers Program Image -->
+                            <img src="./images/VOLUNTEERS_-_Ad_design_R8-01-1536x864.jpg"
+                                 alt="Volunteer & Internship Program - We Want You"
+                                 class="deck-image program-card-image"
+                                 loading="lazy">
+                            <h3>Volunteer &amp; Internship Program</h3>
+                            <p>
+                                A college-credited initiative where volunteers are the heart of our organization.
+                                Their selfless acts and commitment to supporting veterans, armed forces, and Gold
+                                Star families demonstrate that service starts at home. We build awareness and provide
+                                community outreach that creates mutual aid.
+                            </p>
+                            <div class="program-details">
+                                <div class="program-details-inner">
+                                    <p><strong>Benefits:</strong> College credit, hands-on experience, community impact</p>
+                                    <p><strong>Opportunities:</strong> Event support, outreach, program coordination</p>
+                                </div>
+                            </div>
+                            <span class="expand-btn">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="program-card">
+                        <div class="program-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="program-body">
+                            <h3>Veterans Employment Initiative</h3>
+                            <p>
+                                Creating meaningful employment opportunities for veterans through partnerships with
+                                InTake Global &amp; Beverages operations, including fulfillment centers, manufacturing
+                                facilities, and arena concessions. We're putting our veterans to work in dignified,
+                                impactful roles.
+                            </p>
+                            <div class="program-details">
+                                <div class="program-details-inner">
+                                    <p><strong>Positions:</strong> Manufacturing, logistics, operations, management</p>
+                                    <p><strong>Benefits:</strong> Competitive pay, career advancement, skills training</p>
+                                </div>
+                            </div>
+                            <span class="expand-btn">
+                                Learn More <i class="fas fa-chevron-down"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-top-btn"><a href="#hero"><i class="fas fa-arrow-up"></i> Back to Top</a></div>
+            </div>
+        </section>
+
+        <!-- Sponsorship Section -->
+        <section id="sponsorship">
+            <div class="container">
+                <h2 class="section-title">Become a Sponsor</h2>
+                <div class="sponsorship-intro">
+                    <p>
+                        Your partnership enables us to expand our reach and impact. Join us in supporting those
+                        who have served our nation with distinction.
+                    </p>
+                </div>
+
+                <!-- Ambassador Banner -->
+                <div class="ambassador-banner-wrapper" data-animate>
+                    <img src="./images/Xavier_-_Mitch_Rishmad_-_Secod_ad_design_R9-01-1536x864.jpg"
+                         alt="Ambassador Mitch Richmond - Championing Veterans"
+                         class="deck-image ambassador-banner"
+                         loading="lazy">
+                    <div class="ambassador-overlay">
+                        <h3>Backed by NBA Hall of Famer Mitch "The Rock" Richmond</h3>
+                    </div>
+                </div>
+
+                <div class="donation-progress">
+                    <div class="progress-label">
+                        <span>2026 Fundraising Goal</span>
+                        <span><strong>$67,500</strong> of $100,000</span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="progress-bar" data-progress="67.5"></div>
+                    </div>
+                </div>
+
+                <div class="sponsorship-tiers">
+                    <div class="tier-card">
+                        <span class="tier-badge">Supporter</span>
+                        <div class="tier-price">$500</div>
+                        <ul class="tier-benefits">
+                            <li><i class="fas fa-check"></i> <span>Recognition on foundation website</span></li>
+                            <li><i class="fas fa-check"></i> <span>Official MVP supporter decal</span></li>
+                            <li><i class="fas fa-check"></i> <span>Certificate of appreciation</span></li>
+                            <li><i class="fas fa-check"></i> <span>Social media recognition</span></li>
+                            <li><i class="fas fa-check"></i> <span>Quarterly newsletter updates</span></li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%;">Select Tier</a>
+                    </div>
+
+                    <div class="tier-card">
+                        <span class="tier-badge">Bronze</span>
+                        <div class="tier-price">$1,000</div>
+                        <ul class="tier-benefits">
+                            <li><i class="fas fa-check"></i> <span>All Supporter benefits</span></li>
+                            <li><i class="fas fa-check"></i> <span>Logo on event materials</span></li>
+                            <li><i class="fas fa-check"></i> <span>Featured in quarterly newsletter</span></li>
+                            <li><i class="fas fa-check"></i> <span>Priority event notifications</span></li>
+                            <li><i class="fas fa-check"></i> <span>Invitation to annual appreciation event</span></li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%;">Select Tier</a>
+                    </div>
+
+                    <div class="tier-card">
+                        <span class="tier-badge">Silver</span>
+                        <div class="tier-price">$5,000</div>
+                        <ul class="tier-benefits">
+                            <li><i class="fas fa-check"></i> <span>All Bronze benefits</span></li>
+                            <li><i class="fas fa-check"></i> <span>Featured sponsor at one event</span></li>
+                            <li><i class="fas fa-check"></i> <span>Social media campaign highlight</span></li>
+                            <li><i class="fas fa-check"></i> <span>Recognition in PSA materials</span></li>
+                            <li><i class="fas fa-check"></i> <span>VIP seating at foundation events</span></li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%;">Select Tier</a>
+                    </div>
+
+                    <div class="tier-card">
+                        <span class="tier-badge">Gold</span>
+                        <div class="tier-price">$10,000</div>
+                        <ul class="tier-benefits">
+                            <li><i class="fas fa-check"></i> <span>All Silver benefits</span></li>
+                            <li><i class="fas fa-check"></i> <span>Print PSA sponsor recognition</span></li>
+                            <li><i class="fas fa-check"></i> <span>VIP access to all events</span></li>
+                            <li><i class="fas fa-check"></i> <span>Meet &amp; greet with Ambassador</span></li>
+                            <li><i class="fas fa-check"></i> <span>Custom impact report</span></li>
+                        </ul>
+                        <a href="#contact" class="btn btn-primary" style="width: 100%;">Select Tier</a>
+                    </div>
+
+                    <div class="tier-card platinum">
+                        <span class="tier-badge">Platinum</span>
+                        <div class="tier-price">$25,000</div>
+                        <ul class="tier-benefits">
+                            <li><i class="fas fa-check"></i> <span>All Gold benefits</span></li>
+                            <li><i class="fas fa-check"></i> <span>PSA placement: Film, Radio &amp; Print</span></li>
+                            <li><i class="fas fa-check"></i> <span>Executive board presentation</span></li>
+                            <li><i class="fas fa-check"></i> <span>Naming rights opportunity</span></li>
+                            <li><i class="fas fa-check"></i> <span>Annual recognition ceremony honor</span></li>
+                            <li><i class="fas fa-check"></i> <span>Direct veteran employment support</span></li>
+                        </ul>
+                        <a href="#contact" class="btn btn-gold" style="width: 100%;">Select Tier</a>
+                    </div>
+                </div>
+
+                <div class="custom-partnership">
+                    <h3>Custom Partnership Opportunities</h3>
+                    <p>
+                        Looking for a tailored sponsorship package? We work with corporate partners to create
+                        custom arrangements that align with your organization's values and goals.
+                    </p>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+                <div class="section-top-btn"><a href="#hero"><i class="fas fa-arrow-up"></i> Back to Top</a></div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section id="leadership">
+            <div class="leadership-background">
+                <img src="./images/Screenshot_2026-02-10_at_2_26_05_PM.png" alt="Eye of the Storm" loading="lazy">
+            </div>
+            <div class="mvp-parallax-bg">
+                <img src="./images/InTake_Impact_Corp_The_Eye_of_the_Storm_Board_of_Advisers_-_Ad_Design_-_R21-01-01-1-1536x864.jpg"
+                     alt="Eye of the Storm Board of Advisers"
+                     loading="lazy"
+                     style="opacity: 0.3;">
+            </div>
+            <div class="leadership-overlay"></div>
+
+            <div class="leadership-content container">
+                <h2 class="section-title" style="color: var(--white);">The Eye of the Storm</h2>
+                <p class="section-subtitle" style="color: var(--gray-light);">
+                    Our leadership team brings together decades of experience in sports, business, community service, and military advocacy
+                </p>
+
+                <!-- Co-Founder Spotlight -->
+                <div style="margin-bottom: 3rem;" data-animate>
+                    <img src="./images/Mitch_Richmond_Bio_-_Ad_R16-01-1-1536x864.jpg"
+                         alt="Mitch Richmond - Co-Founder InTake Impact Corp &amp; MVP Ambassador"
+                         class="deck-image deck-image-featured"
+                         loading="lazy">
+                </div>
+
+                <div class="leadership-grid">
+                    <div class="leader-card stagger-1">
+                        <div class="leader-photo">
+                            <img src="./images/MITCH_RICHMOND.png" alt="Mitch Richmond" loading="lazy">
+                        </div>
+                        <h3 class="leader-name">Mitch "The Rock" Richmond</h3>
+                        <p class="leader-title">Co-Founder &amp; MVP Ambassador</p>
+                        <div class="leader-bio">
+                            <div class="leader-bio-inner">
+                                <p>
+                                    NBA Hall of Famer and 6-time NBA All-Star, Mitch Richmond brings his legendary
+                                    dedication and leadership to our mission of supporting veterans and Gold Star families.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="leader-card stagger-2">
+                        <div class="leader-photo">
+                            <img src="./images/XAVIER_ARTIST.png" alt="Xavier X Artis" loading="lazy">
+                        </div>
+                        <h3 class="leader-name">Xavier "X" Artis</h3>
+                        <p class="leader-title">President</p>
+                        <div class="leader-bio">
+                            <div class="leader-bio-inner">
+                                <p>
+                                    Visionary entrepreneur and community advocate, Xavier leads our strategic initiatives
+                                    and ensures our programs deliver meaningful impact to those we serve.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="leader-card stagger-3">
+                        <div class="leader-photo">
+                            <img src="./images/ANNY_CASTRO.png" alt="Anny Castro" loading="lazy">
+                        </div>
+                        <h3 class="leader-name">Anny Castro</h3>
+                        <p class="leader-title">Director of External Affairs</p>
+                        <div class="leader-bio">
+                            <div class="leader-bio-inner">
+                                <p>
+                                    Expert in stakeholder relations and community partnerships, Anny builds and maintains
+                                    the vital connections that expand our reach and effectiveness.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="leader-card stagger-4">
+                        <div class="leader-photo">
+                            <img src="./images/MARIA_LUCIO.png" alt="Maria Palola Lucio" loading="lazy">
+                        </div>
+                        <h3 class="leader-name">Maria Palola Lucio, MHA</h3>
+                        <p class="leader-title">Community Affairs Director</p>
+                        <div class="leader-bio">
+                            <div class="leader-bio-inner">
+                                <p>
+                                    Healthcare administration expert dedicated to coordinating our community outreach
+                                    programs and ensuring accessible support for veterans and families.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="leader-card stagger-5">
+                        <div class="leader-photo">
+                            <img src="./images/MAURICE_KELLY.png" alt="Maurice Kelly" loading="lazy">
+                        </div>
+                        <h3 class="leader-name">Maurice Kelly, INV</h3>
+                        <p class="leader-title">Advisor &amp; U.S. Navy Veteran</p>
+                        <div class="leader-bio">
+                            <div class="leader-bio-inner">
+                                <p>
+                                    U.S. Navy veteran providing invaluable insights and guidance on veteran affairs,
+                                    ensuring our programs meet the real needs of those who served.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="leader-card stagger-6">
+                        <div class="leader-photo">
+                            <img src="./images/BRIAN_KEESE.png" alt="Brian Keese" loading="lazy">
+                        </div>
+                        <h3 class="leader-name">Brian Keese</h3>
+                        <p class="leader-title">Trustee &amp; Advisor</p>
+                        <div class="leader-bio">
+                            <div class="leader-bio-inner">
+                                <p>
+                                    Strategic advisor bringing business acumen and governance expertise to ensure
+                                    organizational excellence and fiscal responsibility.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Veterans Ambassador Spotlight -->
+                <div class="veteran-spotlight" data-animate>
+                    <img src="./images/Maurice-Kelly_R6-01-1536x864.jpg"
+                         alt="Maurice Kelly - U.S. Navy Veteran and Veterans Ambassador"
+                         class="deck-image veteran-spotlight-image"
+                         loading="lazy">
+                    <div class="veteran-spotlight-text">
+                        <h3>Meet Our Veterans Ambassador</h3>
+                        <p>
+                            Maurice Kelly, U.S. Navy Veteran and InTake Impact Corp Veterans Ambassador,
+                            exemplifies the dedication and sacrifice of our nation's most valuable players.
+                            His leadership and commitment to serving fellow veterans drives our mission forward.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Meet Our Co-Founder & Ambassador -->
+                <div class="ambassador-subsection" data-animate>
+                    <h3>Meet Our Co-Founder: Mitch "The Rock" Richmond</h3>
+
+                    <!-- Career Highlights -->
+                    <div style="margin-bottom: 2rem;">
+                        <img src="./images/Highlights_Ad_Design_New_R7-01-1536x864.jpg"
+                             alt="Mitch Richmond Career Highlights - NBA All-Star"
+                             class="deck-image"
+                             loading="lazy">
+                    </div>
+
+                    <div class="mvp-featured-content">
+                        <img src="./images/Mitch_Richmond_Bio_-_Ad_R16-01-1-1536x864.jpg"
+                             alt="Mitch Richmond Bio - NBA Hall of Fame Career"
+                             class="deck-image"
+                             loading="lazy">
+                        <div>
+                            <p style="color: var(--gray-light); margin-bottom: 1.5rem;">
+                                <strong>14-season NBA career</strong> including 6 All-Star selections,
+                                1996 Olympic Gold Medal, and induction into the Basketball Hall of Fame in 2014.
+                            </p>
+                            <img src="./images/Mitch_Richmond_Bio_-_Ad_R16-02-1-1536x865.jpg"
+                                 alt="Mitch Richmond Bio - Community Leadership"
+                                 class="deck-image"
+                                 loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="section-top-btn"><a href="#hero"><i class="fas fa-arrow-up"></i> Back to Top</a></div>
+            </div>
+        </section>
+
+        <!-- InTake Global & Beverages Partnership -->
+        <section id="beverages">
+            <div class="container">
+                <h2 class="section-title">Our Corporate Partnership</h2>
+
+                <!-- Product Showcase -->
+                <div class="product-showcase" data-animate>
+                    <img src="./images/New_Can_ad_design_R8-01-01-1-1536x864.jpg"
+                         alt="InTake Energy + Water - MVPs Special Edition Blueberry"
+                         class="deck-image"
+                         loading="lazy">
+                </div>
+
+                <div class="beverages-content">
+                    <div class="beverages-text">
+                        <h3>InTake Global &amp; Beverages</h3>
+                        <p>
+                            InTake Global &amp; Beverages has selected InTake Impact Corp as its preferred charity,
+                            demonstrating a powerful commitment to supporting our veterans and Gold Star families.
+                        </p>
+                        <p>
+                            Through the MVPs Special Edition InTake Energy + Water products, every purchase directly
+                            contributes to the Impact Endowment Fund, creating sustainable support for our programs nationwide.
+                        </p>
+                        <a href="#contact" class="btn btn-primary">Learn More About This Partnership</a>
+                    </div>
+
+                    <div class="beverages-stat">
+                        <div class="beverages-stat-number" data-target="100">0</div>
+                        <div class="beverages-stat-text">
+                            of proceeds from the MVPs Special Edition InTake Energy + Water products are donated
+                            to the Impact Endowment Fund, supporting veterans and Gold Star families nationwide.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Veterans Initiative Section -->
+        <section id="veterans-initiative">
+            <div class="container">
+                <div class="initiative-content">
+                    <h2 class="section-title" style="color: var(--white);">Our Impact on Veterans &amp; Gold Star Families</h2>
+                    <p class="section-subtitle" style="color: var(--gray-light);">
+                        Measurable outcomes and real stories of transformation
+                    </p>
+
+                    <div class="initiative-metrics">
+                        <div class="metric-card">
+                            <div class="metric-number" data-target="500">0</div>
+                            <div class="metric-label">Veterans Served</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number" data-target="125">0</div>
+                            <div class="metric-label">Families Supported</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number" data-target="50">0</div>
+                            <div class="metric-label">Community Events</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number" data-target="1200">0</div>
+                            <div class="metric-label">Service Hours</div>
+                        </div>
+                    </div>
+
+                    <!-- Ambassador Message -->
+                    <div class="testimonial-image-banner" data-animate>
+                        <img src="./images/Intake_Impact_-_New_Ad_Design_R13-02-1-1536x864.jpg"
+                             alt="Ambassador Mitch Richmond Message - Mobilizing Athletes for Veterans"
+                             class="deck-image"
+                             loading="lazy">
+                    </div>
+
+                    <div class="testimonials">
+                        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--white);">Voices from Our Community</h3>
+                        <div class="testimonial-slider">
+                            <div class="testimonial-track" id="testimonial-track">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-quote">
+                                        "InTake Impact Corp gave me hope when I needed it most. Their employment initiative
+                                        helped me transition from military service to a fulfilling civilian career. I'm
+                                        now proud to support other veterans on their journey."
+                                    </p>
+                                    <p class="testimonial-author">— James M., U.S. Army Veteran</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-quote">
+                                        "As a Gold Star mother, I never expected to find such a supportive community.
+                                        The programs and events have helped me heal while honoring my son's memory.
+                                        This organization truly understands what families like mine need."
+                                    </p>
+                                    <p class="testimonial-author">— Patricia L., Gold Star Mother</p>
+                                </div>
+                                <div class="testimonial-card">
+                                    <p class="testimonial-quote">
+                                        "The health and wellness program transformed my life. After struggling with PTSD,
+                                        the counseling and fitness programs gave me the tools to reclaim my well-being.
+                                        I'm forever grateful for this mission-driven organization."
+                                    </p>
+                                    <p class="testimonial-author">— Robert K., U.S. Marine Corps Veteran</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-dots">
+                            <span class="dot active" data-slide="0"></span>
+                            <span class="dot" data-slide="1"></span>
+                            <span class="dot" data-slide="2"></span>
+                        </div>
+                    </div>
+
+                    <div class="timeline">
+                        <h3 style="text-align: center; margin-bottom: 3rem; color: var(--white);">Our Journey</h3>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">2023</div>
+                            <div class="timeline-content">
+                                <h4>Foundation Launch</h4>
+                                <p>
+                                    InTake Impact Corp officially established as a 501(c)(3) non-profit organization
+                                    with a mission to support U.S. veterans and Gold Star families.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024</div>
+                            <div class="timeline-content">
+                                <h4>MVPs Campaign Launch</h4>
+                                <p>
+                                    Launched our flagship awareness campaign with NBA Hall of Famer Mitch Richmond
+                                    as our MVP Ambassador, reaching millions through multimedia PSAs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">2025</div>
+                            <div class="timeline-content">
+                                <h4>Corporate Partnership</h4>
+                                <p>
+                                    InTake Global &amp; Beverages selected us as their preferred charity, creating
+                                    sustainable funding through product sales to the Impact Endowment Fund.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-date">2026</div>
+                            <div class="timeline-content">
+                                <h4>Program Expansion</h4>
+                                <p>
+                                    Expanded our reach with new employment initiatives, health and wellness programs,
+                                    and volunteer opportunities serving 500+ veterans and 125+ families.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="fund-allocation">
+                        <h3>How Your Donation Helps</h3>
+                        <div class="allocation-bars">
+                            <div class="allocation-item">
+                                <div class="allocation-label">
+                                    <span>Veterans Programs &amp; Services</span>
+                                    <span>40%</span>
+                                </div>
+                                <div class="allocation-bar">
+                                    <div class="allocation-fill" data-width="40"></div>
+                                </div>
+                            </div>
+
+                            <div class="allocation-item">
+                                <div class="allocation-label">
+                                    <span>MVPs Awareness Campaigns</span>
+                                    <span>25%</span>
+                                </div>
+                                <div class="allocation-bar">
+                                    <div class="allocation-fill" data-width="25"></div>
+                                </div>
+                            </div>
+
+                            <div class="allocation-item">
+                                <div class="allocation-label">
+                                    <span>Health &amp; Wellness Initiatives</span>
+                                    <span>20%</span>
+                                </div>
+                                <div class="allocation-bar">
+                                    <div class="allocation-fill" data-width="20"></div>
+                                </div>
+                            </div>
+
+                            <div class="allocation-item">
+                                <div class="allocation-label">
+                                    <span>Operations &amp; Administration</span>
+                                    <span>15%</span>
+                                </div>
+                                <div class="allocation-bar">
+                                    <div class="allocation-fill" data-width="15"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="initiative-cta">
+                        <a href="#contact" class="btn btn-gold">Download Our Impact Report</a>
+                        <a href="#sponsorship" class="btn btn-secondary">Become a Sponsor</a>
+                    </div>
+                    <div class="section-top-btn"><a href="#hero"><i class="fas fa-arrow-up"></i> Back to Top</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                    We're here to answer your questions and discuss partnership opportunities
+                </p>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Our Location</h4>
+                                <p>200 South Andrews Ave, Suite #504<br>Fort Lauderdale, Florida 33301</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p><a href="tel:+19549024995">(954) 902-4995</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-fax"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Fax</h4>
+                                <p>(954) 904-1325</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Website</h4>
+                                <p><a href="https://intakeimpact.org" target="_blank">InTakeImpact.org</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <div class="form-success" id="form-success">
+                            <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                            We'll get back to you soon.
+                        </div>
+
+                        <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contact">
+                            <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                                <span class="form-error">Please enter your name</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <span class="form-error">Please enter a valid email</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="interest">I'm Interested In *</label>
+                                <select id="interest" name="interest" required>
+                                    <option value="">Select an option</option>
+                                    <option value="sponsorship">Becoming a Sponsor</option>
+                                    <option value="volunteer">Volunteer Opportunities</option>
+                                    <option value="services">Accessing Services</option>
+                                    <option value="employment">Veterans Employment</option>
+                                    <option value="partnership">Corporate Partnership</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="form-error">Please select an option</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required></textarea>
+                                <span class="form-error">Please enter your message</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="ways-to-support">
+                    <div class="support-card">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h4>Make a Donation</h4>
+                        <p>Your tax-deductible contribution directly supports veterans and Gold Star families</p>
+                    </div>
+
+                    <div class="support-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Volunteer</h4>
+                        <p>Join our team of dedicated volunteers making a difference in our community</p>
+                    </div>
+
+                    <div class="support-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Corporate Partnership</h4>
+                        <p>Align your brand with our mission through strategic partnership opportunities</p>
+                    </div>
+
+                    <div class="support-card">
+                        <i class="fas fa-share-alt"></i>
+                        <h4>Spread the Word</h4>
+                        <p>Share our mission on social media and help us reach more people who need support</p>
+                    </div>
+                </div>
+
+                <!-- Thank You Banner -->
+                <div class="thank-you-banner" data-animate>
+                    <img src="./images/Last_Slide_-_Ad_R9-01-1536x864.jpg"
+                         alt="Thank You For Your Support - InTake Impact Corp"
+                         class="deck-image"
+                         loading="lazy">
+                </div>
+
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h4>Fort Lauderdale, Florida</h4>
+                        <p>200 South Andrews Ave, Suite #504</p>
+                    </div>
+                </div>
+                <div class="section-top-btn"><a href="#hero"><i class="fas fa-arrow-up"></i> Back to Top</a></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./images/Screenshot_2026-02-10_at_2_25_53_PM.png" alt="InTake Impact Corp Logo" loading="lazy">
+                </div>
+                <p class="footer-tagline">
+                    Supporting America's Most Valuable Players
+                </p>
+                <span class="nonprofit-badge">501(c)(3) Non-Profit</span>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#sponsorship">Become a Sponsor</a></li>
+                    <li><a href="#veterans-initiative">Veterans Initiative</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#donate" style="color: var(--accent-cyan); font-weight: 600;">Donate Now</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Our Programs</h3>
+                <ul class="footer-links">
+                    <li><a href="#programs">MVPs PSA Campaign</a></li>
+                    <li><a href="#programs">Health &amp; Wellness</a></li>
+                    <li><a href="#programs">Volunteer Program</a></li>
+                    <li><a href="#programs">Employment Initiative</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Stay Connected</h3>
+                <p style="color: var(--gray-light); margin-bottom: 1rem;">
+                    Subscribe to our newsletter for updates on our programs and impact
+                </p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 InTake Impact Corp. All rights reserved. | EIN: [Tax ID] |
+            <a href="#" style="color: var(--accent-cyan);">Privacy Policy</a> |
+            <a href="#" style="color: var(--accent-cyan);">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Donation Modal -->
+    <div class="donate-overlay" id="donate-overlay">
+        <div class="donate-modal">
+            <button class="donate-close" id="donate-close" aria-label="Close donation modal">&times;</button>
+            <h2><i class="fas fa-heart" style="color: var(--accent-cyan);"></i> Make a Donation</h2>
+            <p class="donate-subtitle">Support U.S. Veterans and Gold Star Families through InTake Impact Corp.</p>
+
+            <div class="donate-amounts" id="donate-amounts">
+                <button class="donate-amount-btn" data-amount="25">$25</button>
+                <button class="donate-amount-btn" data-amount="50">$50</button>
+                <button class="donate-amount-btn selected" data-amount="100">$100</button>
+                <button class="donate-amount-btn" data-amount="250">$250</button>
+                <button class="donate-amount-btn" data-amount="500">$500</button>
+                <button class="donate-amount-btn" data-amount="1000">$1,000</button>
+            </div>
+
+            <input type="number" class="donate-custom" id="donate-custom" placeholder="Or enter custom amount ($)" min="1" step="1">
+
+            <div class="donate-frequency" id="donate-frequency">
+                <button class="donate-freq-btn selected" data-freq="one-time">One-Time</button>
+                <button class="donate-freq-btn" data-freq="monthly">Monthly</button>
+            </div>
+
+            <button class="donate-submit" id="donate-submit">
+                <i class="fas fa-lock"></i> Donate Securely
+            </button>
+
+            <p class="donate-secure"><i class="fas fa-shield-alt"></i> Secure payment powered by Stripe</p>
+            <p class="donate-tax">InTake Impact Corp is a 501(c)(3) organization. Your donation is tax-deductible.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ============================================
+        // SCROLL PROGRESS BAR
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scroll-progress');
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / scrollHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+        });
+
+        // ============================================
+        // NAVIGATION
+        // ============================================
+        const nav = document.getElementById('main-nav');
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Active link highlighting
+        const sections = document.querySelectorAll('section');
+        const navLinksArray = document.querySelectorAll('.nav-links a:not(.btn)');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinksArray.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ============================================
+        // HERO SLIDESHOW
+        // ============================================
+        (function() {
+            const track = document.getElementById('slideshow-track');
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slide-dot');
+            const prevBtn = document.getElementById('slide-prev');
+            const nextBtn = document.getElementById('slide-next');
+            const heroSection = document.getElementById('hero');
+            let currentIndex = 0;
+            let autoInterval = null;
+            const INTERVAL_MS = 5000;
+
+            function goToSlide(index) {
+                // Wrap around
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+
+                // Remove active from all slides
+                slides.forEach(s => s.classList.remove('active'));
+
+                // Move track
+                currentIndex = index;
+                track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+
+                // Set active slide (with slight delay for transition effect)
+                setTimeout(() => {
+                    slides[currentIndex].classList.add('active');
+                }, 100);
+
+                // Update dots
+                dots.forEach((d, i) => {
+                    d.classList.toggle('active', i === currentIndex);
+                });
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            // Start auto-advance
+            function startAuto() {
+                stopAuto();
+                autoInterval = setInterval(nextSlide, INTERVAL_MS);
+            }
+
+            function stopAuto() {
+                if (autoInterval) {
+                    clearInterval(autoInterval);
+                    autoInterval = null;
+                }
+            }
+
+            // Arrow buttons
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                startAuto(); // Reset timer after manual nav
+            });
+
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                startAuto();
+            });
+
+            // Dot navigation
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(i);
+                    startAuto();
+                });
+            });
+
+            // Pause on hover
+            heroSection.addEventListener('mouseenter', stopAuto);
+            heroSection.addEventListener('mouseleave', startAuto);
+
+            // Keyboard navigation when hero is in view
+            document.addEventListener('keydown', (e) => {
+                // Only handle if hero is near viewport
+                const rect = heroSection.getBoundingClientRect();
+                if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+                if (e.key === 'ArrowRight') { nextSlide(); startAuto(); }
+                if (e.key === 'ArrowLeft') { prevSlide(); startAuto(); }
+            });
+
+            // Touch / swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            heroSection.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            heroSection.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) nextSlide(); else prevSlide();
+                    startAuto();
+                }
+            }, { passive: true });
+
+            // Initialize
+            startAuto();
+        })();
+
+        // ============================================
+        // INTERSECTION OBSERVER (SCROLL ANIMATIONS)
+        // ============================================
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and animated elements
+        document.querySelectorAll('.about-card, .stat-item, .program-card, .tier-card, .leader-card, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ============================================
+        // ANIMATED COUNTERS
+        // ============================================
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target + (element.textContent.includes('$') ? '' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current) + (element.textContent.includes('$') ? '' : '+');
+                }
+            }, 16);
+        }
+
+        // Counter observer
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateCounter(entry.target, target);
+                    entry.target.classList.add('counted');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number, .metric-number').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // Beverages percentage counter
+        const beveragesStatObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    let current = 0;
+                    const timer = setInterval(() => {
+                        current += 2;
+                        if (current >= target) {
+                            entry.target.textContent = target + '%';
+                            clearInterval(timer);
+                        } else {
+                            entry.target.textContent = current + '%';
+                        }
+                    }, 20);
+                    entry.target.classList.add('counted');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const beveragesStat = document.querySelector('.beverages-stat-number');
+        if (beveragesStat) {
+            beveragesStatObserver.observe(beveragesStat);
+        }
+
+        // ============================================
+        // PROGRESS BAR ANIMATION
+        // ============================================
+        const progressBarObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progress = entry.target.getAttribute('data-progress');
+                    entry.target.style.width = progress + '%';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const progressBar = document.getElementById('progress-bar');
+        if (progressBar) {
+            progressBarObserver.observe(progressBar);
+        }
+
+        // Fund allocation bars
+        const allocationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    document.querySelectorAll('.allocation-fill').forEach(fill => {
+                        const width = fill.getAttribute('data-width');
+                        fill.style.width = width + '%';
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const fundAllocation = document.querySelector('.fund-allocation');
+        if (fundAllocation) {
+            allocationObserver.observe(fundAllocation);
+        }
+
+        // ============================================
+        // ACCORDION
+        // ============================================
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const isActive = header.classList.contains('active');
+
+                // Close all accordions
+                document.querySelectorAll('.accordion-header').forEach(h => {
+                    h.classList.remove('active');
+                    h.nextElementSibling.style.maxHeight = '0';
+                });
+
+                // Open clicked accordion if it wasn't active
+                if (!isActive) {
+                    header.classList.add('active');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+
+        // ============================================
+        // PROGRAM CARDS EXPAND
+        // ============================================
+        document.querySelectorAll('.program-card').forEach(card => {
+            const expandBtn = card.querySelector('.expand-btn');
+            expandBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                card.classList.toggle('expanded');
+                const details = card.querySelector('.program-details');
+                if (card.classList.contains('expanded')) {
+                    details.style.maxHeight = details.scrollHeight + 'px';
+                } else {
+                    details.style.maxHeight = '0';
+                }
+            });
+        });
+
+        // ============================================
+        // TESTIMONIAL SLIDER
+        // ============================================
+        let currentSlide = 0;
+        const testimonialTrack = document.getElementById('testimonial-track');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            currentSlide = index;
+            testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => showSlide(index));
+        });
+
+        // Auto-advance testimonials
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % 3;
+            showSlide(currentSlide);
+        }, 7000);
+
+        // ============================================
+        // CONTACT FORM VALIDATION
+        // ============================================
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Remove previous errors
+            document.querySelectorAll('.form-group').forEach(group => {
+                group.classList.remove('error');
+            });
+
+            // Validate name
+            const name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                name.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                email.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            // Validate interest
+            const interest = document.getElementById('interest');
+            if (interest.value === '') {
+                interest.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            // Validate message
+            const message = document.getElementById('message');
+            if (message.value.trim() === '') {
+                message.closest('.form-group').classList.add('error');
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Disable button and show sending state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+
+                // Submit to Netlify Forms
+                const formData = new FormData(contactForm);
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(response => {
+                    if (response.ok) {
+                        formSuccess.style.display = 'block';
+                        contactForm.reset();
+                        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        setTimeout(() => { formSuccess.style.display = 'none'; }, 5000);
+                    } else {
+                        alert('There was an issue sending your message. Please try again or email us directly at tintakeimpactcorp@gmail.com');
+                    }
+                })
+                .catch(() => {
+                    alert('There was an issue sending your message. Please try again or email us directly at tintakeimpactcorp@gmail.com');
+                })
+                .finally(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            }
+        });
+
+        // ============================================
+        // NEWSLETTER FORM
+        // ============================================
+        document.querySelectorAll('.newsletter-form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                form.reset();
+            });
+        });
+
+        // ============================================
+        // BACK TO TOP BUTTON
+        // ============================================
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ============================================
+        // SMOOTH SCROLL FOR ALL LINKS
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    const offset = 80; // Account for fixed nav
+                    const targetPosition = target.offsetTop - offset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // PARALLAX EFFECT
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+
+            // Hero parallax (slideshow - apply to active slide bg)
+            const activeSlide = document.querySelector('.slide.active .slide-bg img');
+            if (activeSlide) {
+                activeSlide.style.transform = `translateY(${scrolled * 0.3}px) scale(1.05)`;
+            }
+
+            // MVP parallax
+            const mvpBackground = document.querySelector('.mvp-background img');
+            if (mvpBackground && window.scrollY > document.getElementById('mvp').offsetTop - window.innerHeight) {
+                const mvpScroll = scrolled - document.getElementById('mvp').offsetTop;
+                mvpBackground.style.transform = `translateY(${mvpScroll * 0.3}px)`;
+            }
+        });
+
+        // ============================================
+        // LAZY LOADING IMAGES
+        // ============================================
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (img.dataset.src) {
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                        }
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // ============================================
+        // KEYBOARD NAVIGATION
+        // ============================================
+        document.addEventListener('keydown', (e) => {
+            // Close mobile menu with Escape key
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // ============================================
+        // PERFORMANCE: Debounce scroll events
+        // ============================================
+        function debounce(func, wait = 10) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Apply debounce to scroll-heavy functions if needed
+        // (Currently not applied as performance is good, but available if needed)
+
+        // ============================================
+        // DONATION MODAL
+        // ============================================
+        const donateOverlay = document.getElementById('donate-overlay');
+        const donateClose = document.getElementById('donate-close');
+        const donateAmounts = document.getElementById('donate-amounts');
+        const donateCustom = document.getElementById('donate-custom');
+        const donateFrequency = document.getElementById('donate-frequency');
+        const donateSubmit = document.getElementById('donate-submit');
+        let selectedAmount = 100;
+        let selectedFrequency = 'one-time';
+
+        // Open modal from any "Donate Now" link
+        document.querySelectorAll('a[href="#donate"], .nav-donate').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                donateOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                // Close mobile menu if open
+                mobileToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Close modal
+        function closeDonateModal() {
+            donateOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        donateClose.addEventListener('click', closeDonateModal);
+        donateOverlay.addEventListener('click', (e) => {
+            if (e.target === donateOverlay) closeDonateModal();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && donateOverlay.classList.contains('active')) {
+                closeDonateModal();
+            }
+        });
+
+        // Amount selection
+        donateAmounts.addEventListener('click', (e) => {
+            const btn = e.target.closest('.donate-amount-btn');
+            if (!btn) return;
+            donateAmounts.querySelectorAll('.donate-amount-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            selectedAmount = parseInt(btn.dataset.amount);
+            donateCustom.value = '';
+        });
+
+        donateCustom.addEventListener('input', () => {
+            if (donateCustom.value) {
+                donateAmounts.querySelectorAll('.donate-amount-btn').forEach(b => b.classList.remove('selected'));
+                selectedAmount = parseInt(donateCustom.value) || 0;
+            }
+        });
+
+        // Frequency selection
+        donateFrequency.addEventListener('click', (e) => {
+            const btn = e.target.closest('.donate-freq-btn');
+            if (!btn) return;
+            donateFrequency.querySelectorAll('.donate-freq-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            selectedFrequency = btn.dataset.freq;
+        });
+
+        // Submit donation - redirect to Stripe Checkout
+        donateSubmit.addEventListener('click', async () => {
+            const amount = donateCustom.value ? parseInt(donateCustom.value) : selectedAmount;
+            if (!amount || amount < 1) {
+                alert('Please select or enter a donation amount.');
+                return;
+            }
+
+            donateSubmit.disabled = true;
+            donateSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirecting to Stripe...';
+
+            // Stripe Payment Link approach - works without a backend server
+            // Replace STRIPE_PAYMENT_LINK_URL with your actual Stripe Payment Link
+            // Create payment links at: https://dashboard.stripe.com/payment-links
+            const STRIPE_DONATION_LINK = 'STRIPE_PAYMENT_LINK_PLACEHOLDER';
+
+            if (STRIPE_DONATION_LINK === 'STRIPE_PAYMENT_LINK_PLACEHOLDER') {
+                // Stripe not configured yet - show instructions
+                alert(
+                    'Stripe is not configured yet.\n\n' +
+                    'To set up donations:\n' +
+                    '1. Create a Stripe account at dashboard.stripe.com\n' +
+                    '2. Go to Payment Links and create donation links\n' +
+                    '3. Replace the placeholder in this code with your link URL\n\n' +
+                    'Contact your developer to complete this setup.'
+                );
+                donateSubmit.disabled = false;
+                donateSubmit.innerHTML = '<i class="fas fa-lock"></i> Donate Securely';
+                return;
+            }
+
+            // Redirect to Stripe Payment Link
+            window.location.href = STRIPE_DONATION_LINK;
+        });
+
+        // ============================================
+        // CONSOLE MESSAGE
+        // ============================================
+        console.log('%c InTake Impact Corp ', 'background: #088395; color: #fff; font-size: 20px; padding: 10px;');
+        console.log('%c Supporting America\'s Most Valuable Players ', 'font-size: 14px; color: #088395;');
+        console.log('%c 501(c)(3) Non-Profit Organization ', 'font-size: 12px; color: #666;');
+    </script>
+</body>
+</html>
