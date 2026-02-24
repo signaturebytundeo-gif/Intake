@@ -343,8 +343,9 @@
         .slide-bg img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center center;
+            background: var(--primary-dark);
         }
 
         /* Per-slide image focus points for mobile cropping */
@@ -2135,10 +2136,19 @@
         @media (max-width: 640px) {
             .deck-image {
                 border-radius: 10px;
+                cursor: pointer;
             }
 
             .deck-image:hover {
                 transform: none;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                z-index: 1;
+            }
+
+            .deck-image.expanded {
+                transform: scale(2.2);
+                z-index: 1000;
+                box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7), 0 0 60px rgba(5, 191, 219, 0.3);
             }
 
             .deck-image-featured {
@@ -2281,12 +2291,16 @@
             border-radius: 15px;
             border: 2px solid rgba(5, 191, 219, 0.3);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0s;
+            cursor: zoom-in;
+            position: relative;
+            z-index: 1;
         }
 
         .deck-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(5, 191, 219, 0.2);
+            transform: scale(1.8);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.7), 0 0 60px rgba(5, 191, 219, 0.3);
+            z-index: 1000;
         }
 
         .deck-image-gold {
@@ -2749,7 +2763,7 @@
                     <!-- Slide 5: Sponsorship -->
                     <div class="slide">
                         <div class="slide-bg">
-                            <img src="./images/Fundraising-postcard-Posts-card-design-R10_page-0001.jpg" alt="Become a Sponsor" loading="lazy">
+                            <img src="./images/Last_Slide_-_Ad_R9-01-1536x864.jpg" alt="Become a Sponsor" loading="lazy">
                         </div>
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
@@ -2775,7 +2789,7 @@
                     <!-- Slide 7: Donate -->
                     <div class="slide">
                         <div class="slide-bg">
-                            <img src="./images/Intake_Impact_-_New_Ad_Design_R13-02-1-1536x864.jpg" alt="Support Our Mission" loading="lazy">
+                            <img src="./images/VOLUNTEERS_-_Ad_design_R8-01-1536x864.jpg" alt="Support Our Mission" loading="lazy">
                         </div>
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
@@ -4533,6 +4547,25 @@
         console.log('%c InTake Impact Corp ', 'background: #088395; color: #fff; font-size: 20px; padding: 10px;');
         console.log('%c Supporting America\'s Most Valuable Players ', 'font-size: 14px; color: #088395;');
         console.log('%c 501(c)(3) Non-Profit Organization ', 'font-size: 12px; color: #666;');
+
+        // ============================================
+        // DECK IMAGE TAP-TO-ZOOM (MOBILE)
+        // ============================================
+        document.querySelectorAll('.deck-image').forEach(img => {
+            img.addEventListener('click', function(e) {
+                if (window.innerWidth <= 640) {
+                    e.preventDefault();
+                    const wasExpanded = this.classList.contains('expanded');
+                    document.querySelectorAll('.deck-image.expanded').forEach(el => el.classList.remove('expanded'));
+                    if (!wasExpanded) this.classList.add('expanded');
+                }
+            });
+        });
+        document.addEventListener('click', function(e) {
+            if (!e.target.classList.contains('deck-image')) {
+                document.querySelectorAll('.deck-image.expanded').forEach(el => el.classList.remove('expanded'));
+            }
+        });
     </script>
 </body>
 </html>
