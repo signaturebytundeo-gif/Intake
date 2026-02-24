@@ -4008,11 +4008,13 @@
 
             // Arrow buttons
             nextBtn.addEventListener('click', () => {
+                userInteracted = true;
                 nextSlide();
-                startAuto(); // Reset timer after manual nav
+                startAuto();
             });
 
             prevBtn.addEventListener('click', () => {
+                userInteracted = true;
                 prevSlide();
                 startAuto();
             });
@@ -4020,14 +4022,20 @@
             // Dot navigation
             dots.forEach((dot, i) => {
                 dot.addEventListener('click', () => {
+                    userInteracted = true;
                     goToSlide(i);
                     startAuto();
                 });
             });
 
-            // Pause on hover
-            heroSection.addEventListener('mouseenter', stopAuto);
-            heroSection.addEventListener('mouseleave', startAuto);
+            // Pause on hover — only after user has manually interacted
+            let userInteracted = false;
+            heroSection.addEventListener('mouseenter', () => {
+                if (userInteracted) stopAuto();
+            });
+            heroSection.addEventListener('mouseleave', () => {
+                if (userInteracted) startAuto();
+            });
 
             // Keyboard navigation when hero is in view
             document.addEventListener('keydown', (e) => {
