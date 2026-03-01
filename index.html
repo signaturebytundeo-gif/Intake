@@ -1323,60 +1323,6 @@
             color: var(--gray-light);
         }
 
-        .testimonials {
-            margin: 4rem 0;
-        }
-
-        .testimonial-slider {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .testimonial-card {
-            min-width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .testimonial-quote {
-            font-size: 1.3rem;
-            font-style: italic;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: var(--gray-light);
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--accent-light);
-        }
-
-        .testimonial-dots {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .dot.active {
-            background: var(--accent-light);
             transform: scale(1.2);
         }
 
@@ -3499,42 +3445,6 @@
                              loading="lazy">
                     </div>
 
-                    <div class="testimonials">
-                        <h3 style="text-align: center; margin-bottom: 2rem; color: var(--white);">Voices from Our Community</h3>
-                        <div class="testimonial-slider">
-                            <div class="testimonial-track" id="testimonial-track">
-                                <div class="testimonial-card">
-                                    <p class="testimonial-quote">
-                                        "InTake Impact Corp gave me hope when I needed it most. Their employment initiative
-                                        helped me transition from military service to a fulfilling civilian career. I'm
-                                        now proud to support other veterans on their journey."
-                                    </p>
-                                    <p class="testimonial-author">— James M., U.S. Army Veteran</p>
-                                </div>
-                                <div class="testimonial-card">
-                                    <p class="testimonial-quote">
-                                        "As a Gold Star mother, I never expected to find such a supportive community.
-                                        The programs and events have helped me heal while honoring my son's memory.
-                                        This organization truly understands what families like mine need."
-                                    </p>
-                                    <p class="testimonial-author">— Patricia L., Gold Star Mother</p>
-                                </div>
-                                <div class="testimonial-card">
-                                    <p class="testimonial-quote">
-                                        "The health and wellness program transformed my life. After struggling with PTSD,
-                                        the counseling and fitness programs gave me the tools to reclaim my well-being.
-                                        I'm forever grateful for this mission-driven organization."
-                                    </p>
-                                    <p class="testimonial-author">— Robert K., U.S. Marine Corps Veteran</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-dots">
-                            <span class="dot active" data-slide="0"></span>
-                            <span class="dot" data-slide="1"></span>
-                            <span class="dot" data-slide="2"></span>
-                        </div>
-                    </div>
 
                     <div class="timeline">
                         <h3 style="text-align: center; margin-bottom: 3rem; color: var(--white);">Our Journey</h3>
@@ -4221,31 +4131,6 @@
             });
         });
 
-        // ============================================
-        // TESTIMONIAL SLIDER
-        // ============================================
-        let currentSlide = 0;
-        const testimonialTrack = document.getElementById('testimonial-track');
-        const dots = document.querySelectorAll('.dot');
-
-        function showSlide(index) {
-            currentSlide = index;
-            testimonialTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
-            });
-        }
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => showSlide(index));
-        });
-
-        // Auto-advance testimonials
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % 3;
-            showSlide(currentSlide);
-        }, 7000);
 
         // ============================================
         // CONTACT FORM VALIDATION
