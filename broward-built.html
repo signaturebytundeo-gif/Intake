@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BROWARD BUILT. WORLD PROVEN. — An InTake Impact Corp community program. Leadership. Business. Impact. 31 Cities. One County.">
+    <title>Broward Built. World Proven. | InTake Impact Corp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0B1D3A;
+            --gold: #C8A25C;
+            --gold-light: #E8D5A8;
+            --dark: #0a1225;
+            --white: #f5f5f5;
+            --gray: #888;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--dark); color: var(--white); font-family: 'Open Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+        a { text-decoration: none; color: inherit; }
+
+        /* Nav */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(10,18,37,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-brand { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 14px; color: var(--gold); letter-spacing: 0.08em; }
+        .nav-links { display: flex; gap: 24px; align-items: center; }
+        .nav-links a { font-size: 13px; color: var(--gray); transition: color 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+
+        /* Header */
+        .header { padding: 120px 24px 48px; text-align: center; }
+        .header-label { font-family: 'Montserrat', sans-serif; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+        .header h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(28px, 5vw, 48px); font-weight: 900; line-height: 0.95; margin-bottom: 12px; }
+        .header h1 span { color: var(--gold); }
+        .header .subtitle { font-size: 16px; color: var(--gray); font-style: italic; }
+        .header .tagline { font-family: 'Montserrat', sans-serif; font-size: 13px; color: var(--gold); opacity: 0.7; margin-top: 8px; letter-spacing: 0.05em; }
+        .divider { width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 24px auto; }
+
+        /* Context */
+        .context { max-width: 720px; margin: 0 auto; padding: 32px 24px 48px; text-align: center; }
+        .context p { font-size: 15px; line-height: 1.7; color: var(--gray); margin-bottom: 16px; }
+        .context .highlight { color: var(--gold); font-weight: 600; }
+        .context .white { color: var(--white); }
+
+        /* Slideshow */
+        .slideshow-wrap { max-width: 1100px; margin: 0 auto; padding: 0 16px 32px; }
+        .slideshow { position: relative; overflow: hidden; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); border: 1px solid rgba(200,162,92,0.1); }
+        .slideshow-track { position: relative; width: 100%; }
+        .slideshow-slide { position: absolute; top: 0; left: 0; width: 100%; height: auto; opacity: 0; transform: scale(1.03); transition: opacity 1s ease-in-out, transform 6s ease-out; display: block; }
+        .slideshow-slide.active { position: relative; opacity: 1; transform: scale(1); z-index: 1; }
+        .slide-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+        .slide-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.3); border: none; cursor: pointer; transition: all 0.3s; padding: 0; }
+        .slide-dot.active { background: var(--gold); transform: scale(1.3); }
+        .slide-arrow { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.4); color: rgba(255,255,255,0.8); border: none; border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s; backdrop-filter: blur(4px); font-size: 20px; }
+        .slide-arrow:hover { background: rgba(0,0,0,0.6); color: white; }
+        .slide-prev { left: 12px; }
+        .slide-next { right: 12px; }
+
+        /* Pillars */
+        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; padding: 48px 24px 56px; }
+        .pillar { text-align: center; padding: 24px 16px; }
+        .pillar h3 { font-family: 'Montserrat', sans-serif; font-size: 18px; font-weight: 800; color: var(--gold); margin-bottom: 8px; }
+        .pillar p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+        /* Visit */
+        .visit { text-align: center; padding: 48px 24px; border-top: 1px solid rgba(255,255,255,0.04); }
+        .visit p { font-size: 13px; color: var(--gray); margin-bottom: 16px; }
+        .visit-btn { display: inline-block; border: 1px solid rgba(200,162,92,0.5); color: var(--gold); padding: 12px 32px; font-family: 'Montserrat', sans-serif; font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; transition: all 0.3s; }
+        .visit-btn:hover { background: var(--gold); color: var(--dark); }
+        .visit-sub { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; text-transform: uppercase; }
+        .visit-sub span.sep { color: rgba(200,162,92,0.3); }
+
+        /* Footer */
+        .footer { text-align: center; padding: 24px; border-top: 1px solid rgba(255,255,255,0.04); font-size: 11px; color: rgba(255,255,255,0.15); }
+
+        @media (max-width: 640px) {
+            .nav-links { gap: 16px; }
+            .nav-links a { font-size: 12px; }
+            .slide-arrow { width: 36px; height: 36px; font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">INTAKE IMPACT</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="https://browardbuilt.com" target="_blank">BrowardBuilt.com</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <section class="header">
+        <p class="header-label">An InTake Impact Corp Community Program</p>
+        <h1>BROWARD <span>BUILT.</span><br>WORLD <span>PROVEN.</span></h1>
+        <p class="subtitle">From the Shorelines to the Skylines.</p>
+        <p class="tagline">A Declaration of Hometown Pride</p>
+        <div class="divider"></div>
+    </section>
+
+    <!-- CONTEXT -->
+    <section class="context">
+        <p><span class="highlight">BROWARD BUILT. WORLD PROVEN.</span> is a community initiative developed through <span class="white">The World's Brand</span> and operated in partnership with <span class="white">InTake Impact Corp</span>. The program connects community resources, merchandise activations, grants, and strategic partnerships across Broward County's 31 cities through Leadership, Business, and Impact.</p>
+    </section>
+
+    <!-- SLIDESHOW -->
+    <div class="slideshow-wrap">
+        <div class="slideshow" id="slideshow">
+            <div class="slideshow-track">
+                <img src="images/slide-monument.jpg" alt="BBWP Monument Signage" class="slideshow-slide active">
+                <img src="images/slide-grant-challenge.jpg" alt="$5,000 Hometown Pride Grant Challenge" class="slideshow-slide">
+                <img src="images/slide-merch-31cities.jpg" alt="Broward County's 31 Cities Merchandise" class="slideshow-slide">
+                <img src="images/slide-impact-activation.jpg" alt="Impact — Community Activation" class="slideshow-slide">
+                <img src="images/slide-aviation.jpg" alt="Community-to-Cockpit Aviation Pathway" class="slideshow-slide">
+                <img src="images/slide-production.jpg" alt="American Logowear Production" class="slideshow-slide">
+                <img src="images/slide-price-chart.jpg" alt="Official Price Chart" class="slideshow-slide">
+                <img src="images/slide-internship.jpg" alt="Youth Internship & Entrepreneurship" class="slideshow-slide">
+                <img src="images/slide-window-decal.jpg" alt="Proud Supporter Window Decal" class="slideshow-slide">
+                <img src="images/slide-hat.jpg" alt="BBWP Embroidered Cap" class="slideshow-slide">
+            </div>
+            <div class="slide-dots" id="slideshow-dots"></div>
+            <button class="slide-arrow slide-prev" id="slide-prev">&#8249;</button>
+            <button class="slide-arrow slide-next" id="slide-next">&#8250;</button>
+        </div>
+    </div>
+
+    <!-- PILLARS -->
+    <section class="pillars">
+        <div class="pillar">
+            <h3>Leadership</h3>
+            <p>Recognizing individuals who inspire, mentor, and lead within their communities.</p>
+        </div>
+        <div class="pillar">
+            <h3>Business</h3>
+            <p>Supporting entrepreneurs and local businesses contributing to Broward County's growth.</p>
+        </div>
+        <div class="pillar">
+            <h3>Impact</h3>
+            <p>Celebrating individuals and organizations creating positive community change.</p>
+        </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="visit">
+        <p>Visit the full Broward Built experience</p>
+        <a href="https://browardbuilt.com" target="_blank" class="visit-btn">browardbuilt.com</a>
+        <div class="visit-sub">
+            <span>31 Cities</span>
+            <span class="sep">|</span>
+            <span>One County</span>
+            <span class="sep">|</span>
+            <span>One Story at a Time</span>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        &copy; 2026 InTake Impact Corp. All rights reserved. | BROWARD BUILT. WORLD PROVEN. is a community initiative.
+    </footer>
+
+    <script>
+        (function() {
+            var slides = document.querySelectorAll('.slideshow-slide');
+            var dotsContainer = document.getElementById('slideshow-dots');
+            var prevBtn = document.getElementById('slide-prev');
+            var nextBtn = document.getElementById('slide-next');
+            if (!slides.length || !dotsContainer) return;
+
+            var current = 0, interval;
+
+            for (var i = 0; i < slides.length; i++) {
+                var dot = document.createElement('button');
+                dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', function() { goTo(parseInt(this.getAttribute('data-index'))); });
+                dotsContainer.appendChild(dot);
+            }
+            var dots = dotsContainer.querySelectorAll('.slide-dot');
+
+            function goTo(index) {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (index + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+                resetInterval();
+            }
+            function next() { goTo(current + 1); }
+            function prev() { goTo(current - 1); }
+            function resetInterval() { clearInterval(interval); interval = setInterval(next, 5000); }
+
+            prevBtn.addEventListener('click', prev);
+            nextBtn.addEventListener('click', next);
+
+            var touchStartX = 0;
+            var el = document.getElementById('slideshow');
+            el.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+            el.addEventListener('touchend', function(e) {
+                var diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+            }, { passive: true });
+
+            interval = setInterval(next, 5000);
+            el.addEventListener('mouseenter', function() { clearInterval(interval); });
+            el.addEventListener('mouseleave', function() { interval = setInterval(next, 5000); });
+        })();
+    </script>
+</body>
+</html>
